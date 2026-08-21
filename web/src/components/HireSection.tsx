@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function HireSection() {
   return (
     <section id="hire" className="bg-forest px-5 py-24 text-field sm:px-8">
@@ -7,7 +9,7 @@ export function HireSection() {
           Ready for a site that looks this intentional?
         </h2>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-field/75">
-          Tell me about your brand, your launch goal, and the feeling you want visitors to walk away with.
+          Tell me about your brand, your launch goal, or the CRM your reps need to open every morning.
           I&apos;ll map a clear path from first draft to live on Vercel.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
@@ -17,12 +19,12 @@ export function HireSection() {
           >
             Start a project
           </a>
-          <a
-            href="/playground"
+          <Link
+            href="/crm"
             className="border border-field/35 px-6 py-3 text-sm tracking-[0.12em] uppercase text-field transition hover:border-gold hover:text-gold-soft"
           >
-            See the lab first
-          </a>
+            Custom CRM builds
+          </Link>
         </div>
       </div>
     </section>

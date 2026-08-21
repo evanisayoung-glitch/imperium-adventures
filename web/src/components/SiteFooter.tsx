@@ -11,6 +11,9 @@ export function SiteFooter() {
           </p>
         </div>
         <div className="flex flex-col gap-2 text-sm text-field/75 sm:items-end">
+          <Link href="/crm" className="transition-colors hover:text-gold-soft">
+            Custom CRM builds
+          </Link>
           <Link href="/playground" className="transition-colors hover:text-gold-soft">
             Open playground
           </Link>
