@@ -32,7 +32,7 @@ export function CraftSection() {
           {crafts.map((craft) => {
             const content = (
               <>
-                <h3 className="display text-2xl text-forest transition group-hover:text-forest-mid">
+                <h3 className="display text-2xl text-forest transition group-hover:text-forest-mid group-active:text-forest-mid">
                   {craft.title}
                 </h3>
                 <p className="text-sm leading-relaxed text-muted">{craft.body}</p>
@@ -45,7 +45,11 @@ export function CraftSection() {
             );
 
             return craft.href ? (
-              <Link key={craft.title} href={craft.href} className="group space-y-3">
+              <Link
+                key={craft.title}
+                href={craft.href}
+                className="group space-y-3 active:opacity-80"
+              >
                 {content}
               </Link>
             ) : (

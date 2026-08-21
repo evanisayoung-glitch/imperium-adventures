@@ -15,13 +15,13 @@ export function HireSection() {
         <div className="mt-10 flex flex-wrap gap-3">
           <a
             href="mailto:Imperiumadventures99@gmail.com?subject=Website%20project%20inquiry"
-            className="bg-gold px-6 py-3 text-sm font-medium tracking-[0.12em] uppercase text-forest-deep transition hover:bg-gold-soft"
+            className="inline-flex min-h-11 items-center bg-gold px-6 py-3 text-sm font-medium tracking-[0.12em] uppercase text-forest-deep transition hover:bg-gold-soft active:bg-gold-soft"
           >
             Start a project
           </a>
           <Link
             href="/crm"
-            className="border border-field/35 px-6 py-3 text-sm tracking-[0.12em] uppercase text-field transition hover:border-gold hover:text-gold-soft"
+            className="inline-flex min-h-11 items-center border border-field/35 px-6 py-3 text-sm tracking-[0.12em] uppercase text-field transition hover:border-gold hover:text-gold-soft active:border-gold active:text-gold-soft"
           >
             Custom CRM builds
           </Link>

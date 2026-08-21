@@ -10,16 +10,22 @@ export function SiteFooter() {
             A living studio for experiments, prototypes, and client-ready web craft.
           </p>
         </div>
-        <div className="flex flex-col gap-2 text-sm text-field/75 sm:items-end">
-          <Link href="/crm" className="transition-colors hover:text-gold-soft">
+        <div className="flex flex-col gap-1 text-sm text-field/75 sm:items-end">
+          <Link
+            href="/crm"
+            className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
+          >
             Custom CRM builds
           </Link>
-          <Link href="/playground" className="transition-colors hover:text-gold-soft">
+          <Link
+            href="/playground"
+            className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
+          >
             Open playground
           </Link>
           <a
             href="mailto:Imperiumadventures99@gmail.com?subject=Website%20project%20inquiry"
-            className="transition-colors hover:text-gold-soft"
+            className="inline-flex min-h-11 items-center break-all transition-colors hover:text-gold-soft active:text-gold-soft"
           >
             Imperiumadventures99@gmail.com
           </a>

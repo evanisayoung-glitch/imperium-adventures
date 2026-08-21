@@ -6,8 +6,8 @@ export function Hero() {
   return (
     <section className="relative isolate min-h-[100svh] overflow-hidden text-field">
       <MountainBackdrop />
-      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-20 pt-28 sm:px-8 sm:pb-24">
-        <div className="grid items-end gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-16 pt-28 sm:px-8 sm:pb-24">
+        <div className="grid items-end gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
           <div>
             <p className="animate-rise display text-4xl leading-none tracking-[0.14em] text-gold-soft sm:text-6xl md:text-7xl">
               IMPERIUM
@@ -25,20 +25,20 @@ export function Hero() {
             <div className="animate-rise-delay-3 mt-8 flex flex-wrap gap-3">
               <Link
                 href="/playground"
-                className="bg-gold px-6 py-3 text-sm font-medium tracking-[0.12em] uppercase text-forest-deep transition hover:bg-gold-soft"
+                className="inline-flex min-h-11 items-center bg-gold px-6 py-3 text-sm font-medium tracking-[0.12em] uppercase text-forest-deep transition hover:bg-gold-soft active:bg-gold-soft"
               >
                 Enter playground
               </Link>
               <Link
                 href="/crm"
-                className="border border-field/40 px-6 py-3 text-sm tracking-[0.12em] uppercase text-field transition hover:border-gold hover:text-gold-soft"
+                className="inline-flex min-h-11 items-center border border-field/40 px-6 py-3 text-sm tracking-[0.12em] uppercase text-field transition hover:border-gold hover:text-gold-soft active:border-gold active:text-gold-soft"
               >
                 Custom CRMs
               </Link>
             </div>
           </div>
-          <div className="animate-rise-delay-2 hidden justify-self-end lg:block">
-            <LivingCompass size={260} />
+          <div className="animate-rise-delay-2 flex justify-center lg:justify-self-end">
+            <LivingCompass size={240} />
           </div>
         </div>
       </div>
