@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" role="img" aria-label="Imperium Adventures LLC">
+  <title>Imperium Adventures LLC</title>
+  <rect width="800" height="900" fill="#F7F4EC"/>
+
+  <!-- Laurel left -->
+  <g fill="none" stroke="#C9A227" stroke-width="10" stroke-linecap="round">
+    <path d="M250 310 C180 250 170 170 210 120"/>
+    <path d="M235 285 C200 255 185 220 195 185" stroke-width="8"/>
+    <path d="M245 255 C215 230 205 200 215 170" stroke-width="8"/>
+  </g>
+  <g fill="#C9A227">
+    <ellipse cx="205" cy="140" rx="16" ry="9" transform="rotate(-35 205 140)"/>
+    <ellipse cx="192" cy="175" rx="15" ry="8" transform="rotate(-25 192 175)"/>
+    <ellipse cx="198" cy="210" rx="14" ry="8" transform="rotate(-15 198 210)"/>
+    <ellipse cx="215" cy="245" rx="14" ry="8" transform="rotate(-5 215 245)"/>
+    <ellipse cx="235" cy="275" rx="13" ry="7" transform="rotate(8 235 275)"/>
+  </g>
+
+  <!-- Laurel right -->
+  <g fill="none" stroke="#C9A227" stroke-width="10" stroke-linecap="round">
+    <path d="M550 310 C620 250 630 170 590 120"/>
+    <path d="M565 285 C600 255 615 220 605 185" stroke-width="8"/>
+    <path d="M555 255 C585 230 595 200 585 170" stroke-width="8"/>
+  </g>
+  <g fill="#C9A227">
+    <ellipse cx="595" cy="140" rx="16" ry="9" transform="rotate(35 595 140)"/>
+    <ellipse cx="608" cy="175" rx="15" ry="8" transform="rotate(25 608 175)"/>
+    <ellipse cx="602" cy="210" rx="14" ry="8" transform="rotate(15 602 210)"/>
+    <ellipse cx="585" cy="245" rx="14" ry="8" transform="rotate(5 585 245)"/>
+    <ellipse cx="565" cy="275" rx="13" ry="7" transform="rotate(-8 565 275)"/>
+  </g>
+
+  <!-- Crown -->
+  <path d="M340 95 L360 145 L400 105 L440 145 L460 95 L455 155 L345 155 Z" fill="#C9A227"/>
+  <circle cx="400" cy="98" r="8" fill="#C9A227"/>
+  <circle cx="345" cy="100" r="6" fill="#C9A227"/>
+  <circle cx="455" cy="100" r="6" fill="#C9A227"/>
+
+  <!-- Outer rings -->
+  <circle cx="400" cy="360" r="185" fill="none" stroke="#1B4332" stroke-width="14"/>
+  <circle cx="400" cy="360" r="168" fill="#F7F4EC" stroke="#1B4332" stroke-width="4"/>
+  <circle cx="400" cy="360" r="158" fill="none" stroke="#1B4332" stroke-width="2" stroke-dasharray="4 8"/>
+
+  <!-- Compass points -->
+  <polygon points="400,195 412,330 400,345 388,330" fill="#C9A227"/>
+  <polygon points="400,525 412,390 400,375 388,390" fill="#C9A227"/>
+  <polygon points="235,360 370,348 385,360 370,372" fill="#C9A227"/>
+  <polygon points="565,360 430,348 415,360 430,372" fill="#C9A227"/>
+  <polygon points="400,500 408,520 400,535 392,520" fill="#C9A227"/>
+
+  <!-- Mountain -->
+  <path d="M250 430 L330 300 L370 350 L400 250 L450 340 L490 295 L550 430 Z" fill="#1B4332"/>
+  <path d="M400 250 L415 290 L400 285 L385 295 Z" fill="#F7F4EC"/>
+  <path d="M330 300 L345 325 L330 320 Z" fill="#F7F4EC" opacity="0.85"/>
+
+  <!-- Trees -->
+  <g fill="#1B4332">
+    <path d="M290 430 L305 390 L320 430 Z"/>
+    <path d="M320 430 L335 385 L350 430 Z"/>
+    <path d="M350 430 L365 395 L380 430 Z"/>
+    <path d="M420 430 L438 380 L456 430 Z"/>
+    <path d="M450 430 L468 390 L486 430 Z"/>
+    <path d="M480 430 L495 400 L510 430 Z"/>
+  </g>
+  <rect x="250" y="428" width="300" height="14" fill="#1B4332"/>
+
+  <!-- Wordmark -->
+  <text x="400" y="640" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" fill="#1B4332" letter-spacing="6">IMPERIUM</text>
+  <line x1="170" y1="690" x2="250" y2="690" stroke="#C9A227" stroke-width="3"/>
+  <text x="400" y="702" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="600" fill="#1B4332" letter-spacing="8">ADVENTURES</text>
+  <line x1="550" y1="690" x2="630" y2="690" stroke="#C9A227" stroke-width="3"/>
+  <line x1="330" y1="750" x2="365" y2="750" stroke="#C9A227" stroke-width="2"/>
+  <text x="400" y="758" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" fill="#C9A227" letter-spacing="10">LLC</text>
+  <line x1="435" y1="750" x2="470" y2="750" stroke="#C9A227" stroke-width="2"/>
+</svg>
