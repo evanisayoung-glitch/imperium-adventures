@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+:root {
+  --forest: #1b4332;
+  --forest-deep: #0f2a1f;
+  --forest-mid: #2d6a4f;
+  --gold: #c9a227;
+  --gold-soft: #e0c35a;
+  --field: #f7f4ec;
+  --field-warm: #efe8d8;
+  --ink: #14241c;
+  --muted: #4a6356;
+  --background: var(--field);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
+  --color-forest-mid: var(--forest-mid);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-field: var(--field);
+  --color-field-warm: var(--field-warm);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Georgia, serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--gold) 45%, transparent);
+  color: var(--forest-deep);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mist-drift {
+  from {
+    transform: translateX(-2%);
+  }
+  to {
+    transform: translateX(2%);
+  }
+}
+
+@keyframes needle-settle {
+  0% {
+    transform: rotate(-18deg);
+  }
+  60% {
+    transform: rotate(6deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.animate-rise {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-rise-delay-1 {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+}
+
+.animate-rise-delay-2 {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
+}
+
+.animate-rise-delay-3 {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.36s both;
+}
+
+.mist-layer {
+  animation: mist-drift 14s ease-in-out infinite alternate;
+}
+
+.needle-intro {
+  animation: needle-settle 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.gold-pulse {
+  animation: soft-pulse 3.2s ease-in-out infinite;
+}
+
+.display {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  letter-spacing: 0.04em;
+}
+
+.rule-gold {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    transparent
+  );
+}

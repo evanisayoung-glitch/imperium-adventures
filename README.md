@@ -16,12 +16,17 @@ Primary logo and brand materials live in [`brand/`](./brand/).
 | Gold        | `#C9A227` | Accent / prestige    |
 | Off-white   | `#F7F4EC` | Background / field   |
 
+## Website
+
+The public playground and client showcase lives in [`web/`](./web/) and deploys to Vercel (root directory: `web`).
+
 ## Repository layout
 
 ```
 brand/          Brand assets (logo, guidelines)
 docs/           Company documentation
 projects/       Product and venture workspaces
+web/            Next.js playground + showcase site
 ```
 
 ## License
