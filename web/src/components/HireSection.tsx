@@ -9,8 +9,9 @@ export function HireSection() {
           Ready for a site that looks this intentional?
         </h2>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-field/75">
-          Tell me about your brand, your launch goal, or the CRM your reps need to open every morning.
-          I&apos;ll map a clear path from first draft to live on Vercel.
+          Tell me about your brand, your launch goal, the particle wordmark on this page,
+          or the CRM your reps need to open every morning. I&apos;ll map a clear path from
+          first draft to live on Vercel.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <a
@@ -19,6 +20,12 @@ export function HireSection() {
           >
             Start a project
           </a>
+          <Link
+            href="/playground/wordmark"
+            className="inline-flex min-h-11 items-center border border-field/35 px-6 py-3 text-sm tracking-[0.12em] uppercase text-field transition hover:border-gold hover:text-gold-soft active:border-gold active:text-gold-soft"
+          >
+            Particle wordmark
+          </Link>
           <Link
             href="/crm"
             className="inline-flex min-h-11 items-center border border-field/35 px-6 py-3 text-sm tracking-[0.12em] uppercase text-field transition hover:border-gold hover:text-gold-soft active:border-gold active:text-gold-soft"

@@ -7,6 +7,12 @@ export type Experiment = {
 
 export const experiments: Experiment[] = [
   {
+    slug: "wordmark",
+    title: "Particle Wordmark",
+    tagline: "Dots that only form your brand when a visitor earns it — a client-ready field.",
+    status: "live",
+  },
+  {
     slug: "compass",
     title: "Living Compass",
     tagline: "Pointer tracking with soft magnetic ease — brand motion in the wild.",

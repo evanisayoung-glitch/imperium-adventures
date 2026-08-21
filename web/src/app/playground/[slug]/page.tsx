@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { LivingCompass } from "@/components/LivingCompass";
 import { MistCanvas } from "@/components/MistCanvas";
 import { Typeforge } from "@/components/Typeforge";
+import { WordmarkLab } from "@/components/WordmarkLab";
 import { experiments, getExperiment } from "@/lib/experiments";
 
 type Props = {
@@ -42,6 +43,7 @@ export default async function ExperimentPage({ params }: Props) {
         <p className="mt-4 max-w-2xl text-base text-muted">{experiment.tagline}</p>
 
         <div className="mt-12">
+          {slug === "wordmark" && <WordmarkLab />}
           {slug === "compass" && (
             <div className="flex flex-col items-center gap-8 border border-forest/15 px-6 py-12 sm:py-16">
               <LivingCompass size={280} />
