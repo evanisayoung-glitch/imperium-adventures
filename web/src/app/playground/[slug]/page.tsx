@@ -30,7 +30,7 @@ export default async function ExperimentPage({ params }: Props) {
   if (!experiment) notFound();
 
   return (
-    <div className="bg-field px-5 pb-24 pt-28 sm:px-8">
+    <section className="bg-field px-5 pb-24 pt-28 sm:px-8">
       <div className="mx-auto max-w-6xl">
         <Link
           href="/playground"
@@ -43,7 +43,7 @@ export default async function ExperimentPage({ params }: Props) {
 
         <div className="mt-12">
           {slug === "compass" && (
-            <div className="flex flex-col items-center gap-8 border border-forest/15 bg-field-warm/50 px-6 py-12 sm:py-16">
+            <div className="flex flex-col items-center gap-8 border border-forest/15 px-6 py-12 sm:py-16">
               <LivingCompass size={280} />
               <p className="max-w-md text-center text-sm text-muted">
                 Press and drag on the compass with your finger, or move your pointer on desktop — the needle follows with soft magnetic ease.
@@ -52,12 +52,12 @@ export default async function ExperimentPage({ params }: Props) {
           )}
           {slug === "mist" && <MistCanvas />}
           {slug === "typeforge" && (
-            <div className="border border-forest/15 bg-field-warm/40 px-5 py-10 sm:px-8">
+            <div className="border border-forest/15 px-5 py-10 sm:px-8">
               <Typeforge />
             </div>
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

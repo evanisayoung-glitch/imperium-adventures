@@ -19,11 +19,11 @@ export default function CrmPage() {
   return (
     <>
       <CrmHero />
-      <div className="bg-forest-deep px-5 py-10 sm:px-8 lg:hidden">
-        <div className="mx-auto flex max-w-lg justify-center">
+      <section className="bg-forest-deep px-5 py-10 sm:px-8 lg:hidden">
+        <div className="relative z-[2] mx-auto flex max-w-lg justify-center">
           <CrmCommandPreview />
         </div>
-      </div>
+      </section>
       <CrmFintiShowcase />
       <CrmPillars />
       <CrmOffer />
