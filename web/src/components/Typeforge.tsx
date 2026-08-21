@@ -15,10 +15,10 @@ export function Typeforge() {
 
   return (
     <div className="space-y-8">
-      <div className="min-h-[180px] border-y border-forest/15 py-10">
+      <div className="min-h-[180px] overflow-x-auto border-y border-forest/15 py-10">
         <p
-          className="display text-forest leading-[1.05]"
-          style={{ fontSize: `${size}px`, letterSpacing: `${tracking}em` }}
+          className="display text-forest leading-[1.05] break-words"
+          style={{ fontSize: `clamp(1.75rem, ${size * 0.12}vw + 1rem, ${size}px)`, letterSpacing: `${tracking}em` }}
         >
           {text || "Type something bold."}
         </p>
@@ -29,7 +29,9 @@ export function Typeforge() {
           <input
             value={text}
             onChange={(event) => setText(event.target.value)}
-            className="w-full border border-forest/20 bg-field px-3 py-2 text-ink outline-none transition focus:border-gold"
+            className="min-h-11 w-full border border-forest/20 bg-field px-3 py-2.5 text-base text-ink outline-none transition focus:border-gold"
+            enterKeyHint="done"
+            autoComplete="off"
           />
         </label>
         <div className="flex flex-wrap gap-2 self-end">
@@ -38,7 +40,7 @@ export function Typeforge() {
               key={sample}
               type="button"
               onClick={() => setText(sample)}
-              className="border border-forest/20 px-3 py-1.5 text-xs tracking-wide text-muted transition hover:border-gold hover:text-forest"
+              className="min-h-11 border border-forest/20 px-3 py-2 text-xs tracking-wide text-muted transition hover:border-gold hover:text-forest active:border-gold active:bg-field-warm active:text-forest"
             >
               {sample}
             </button>
@@ -52,7 +54,7 @@ export function Typeforge() {
             max={88}
             value={size}
             onChange={(event) => setSize(Number(event.target.value))}
-            className="w-full accent-gold"
+            className="touch-range w-full accent-gold"
           />
         </label>
         <label className="block space-y-2 text-sm text-muted">
@@ -64,7 +66,7 @@ export function Typeforge() {
             step={0.01}
             value={tracking}
             onChange={(event) => setTracking(Number(event.target.value))}
-            className="w-full accent-gold"
+            className="touch-range w-full accent-gold"
           />
         </label>
       </div>

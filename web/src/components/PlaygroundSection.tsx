@@ -17,20 +17,20 @@ export function PlaygroundSection() {
             <li key={item.slug}>
               <Link
                 href={`/playground/${item.slug}`}
-                className="group flex flex-col gap-2 py-7 transition sm:flex-row sm:items-baseline sm:justify-between"
+                className="group flex flex-col gap-2 py-7 transition active:opacity-80 sm:flex-row sm:items-baseline sm:justify-between"
               >
                 <div className="flex items-baseline gap-4">
                   <span className="display text-sm text-gold">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div>
-                    <p className="display text-2xl text-forest transition group-hover:text-forest-mid">
+                    <p className="display text-2xl text-forest transition group-hover:text-forest-mid group-active:text-forest-mid">
                       {item.title}
                     </p>
                     <p className="mt-1 max-w-xl text-sm text-muted">{item.tagline}</p>
                   </div>
                 </div>
-                <span className="text-xs tracking-[0.18em] uppercase text-muted transition group-hover:text-gold">
+                <span className="text-xs tracking-[0.18em] uppercase text-muted transition group-hover:text-gold group-active:text-gold">
                   Open →
                 </span>
               </Link>

@@ -43,10 +43,10 @@ export default async function ExperimentPage({ params }: Props) {
 
         <div className="mt-12">
           {slug === "compass" && (
-            <div className="flex flex-col items-center gap-8 border border-forest/15 bg-field-warm/50 px-6 py-16">
-              <LivingCompass size={320} />
+            <div className="flex flex-col items-center gap-8 border border-forest/15 bg-field-warm/50 px-6 py-12 sm:py-16">
+              <LivingCompass size={280} />
               <p className="max-w-md text-center text-sm text-muted">
-                Move your pointer around the page — the needle tracks with a soft magnetic ease.
+                Drag on the compass (touch) or move your pointer (desktop) — the needle tracks with soft magnetic ease.
               </p>
             </div>
           )}
