@@ -15,7 +15,7 @@ export const experiments: Experiment[] = [
   {
     slug: "mist",
     title: "Mountain Mist",
-    tagline: "Layered SVG atmosphere that responds to scroll and pointer.",
+    tagline: "Layered peaks and mist you can grab and drag — clear parallax on touch and mouse.",
     status: "live",
   },
   {
