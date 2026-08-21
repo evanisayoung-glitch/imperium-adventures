@@ -117,6 +117,18 @@ body {
   }
 }
 
+
+@keyframes pipeline-glide {
+  from {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  to {
+    transform: translateY(-4px);
+    opacity: 0.95;
+  }
+}
+
 .animate-rise {
   animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }

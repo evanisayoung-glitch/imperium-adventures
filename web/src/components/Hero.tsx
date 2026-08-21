@@ -29,12 +29,12 @@ export function Hero() {
               >
                 Enter playground
               </Link>
-              <a
-                href="#hire"
+              <Link
+                href="/crm"
                 className="inline-flex min-h-11 items-center border border-field/40 px-6 py-3 text-sm tracking-[0.12em] uppercase text-field transition hover:border-gold hover:text-gold-soft active:border-gold active:text-gold-soft"
               >
-                Hire me
-              </a>
+                Custom CRMs
+              </Link>
             </div>
           </div>
           <div className="animate-rise-delay-2 flex justify-center lg:justify-self-end">

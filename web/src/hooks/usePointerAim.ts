@@ -14,7 +14,10 @@ export function usePointerAim(
   onAim: PointHandler,
 ) {
   const onAimRef = useRef(onAim);
-  onAimRef.current = onAim;
+
+  useEffect(() => {
+    onAimRef.current = onAim;
+  }, [onAim]);
 
   useEffect(() => {
     const surface = surfaceRef.current;
