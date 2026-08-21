@@ -15,7 +15,7 @@ export const experiments: Experiment[] = [
   {
     slug: "mist",
     title: "Mountain Mist",
-    tagline: "Layered peaks and mist you can grab and drag — clear parallax on touch and mouse.",
+    tagline: "Fixed mountain ridgelines with mist you can grab and drag.",
     status: "live",
   },
   {
