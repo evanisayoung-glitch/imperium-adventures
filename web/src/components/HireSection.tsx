@@ -12,7 +12,7 @@ export function HireSection() {
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <a
-            href="mailto:evanisayoung@gmail.com?subject=Website%20project%20inquiry"
+            href="mailto:Imperiumadventures99@gmail.com?subject=Website%20project%20inquiry"
             className="bg-gold px-6 py-3 text-sm font-medium tracking-[0.12em] uppercase text-forest-deep transition hover:bg-gold-soft"
           >
             Start a project
