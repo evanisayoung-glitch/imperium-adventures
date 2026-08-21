@@ -6,8 +6,6 @@ type Offset = { x: number; y: number };
 
 export function MistCanvas() {
   const surfaceRef = useRef<HTMLDivElement>(null);
-  const farRef = useRef<HTMLDivElement>(null);
-  const nearRef = useRef<HTMLDivElement>(null);
   const mistRef = useRef<HTMLDivElement>(null);
   const offset = useRef<Offset>({ x: 0, y: 0 });
   const drag = useRef<{
@@ -31,14 +29,8 @@ export function MistCanvas() {
     const clampedY = Math.max(-1, Math.min(1, y));
     offset.current = { x: clampedX, y: clampedY };
 
-    if (farRef.current) {
-      farRef.current.style.transform = `translate3d(${clampedX * 28}px, ${clampedY * 14}px, 0)`;
-    }
-    if (nearRef.current) {
-      nearRef.current.style.transform = `translate3d(${clampedX * 64}px, ${clampedY * 28}px, 0)`;
-    }
     if (mistRef.current) {
-      mistRef.current.style.transform = `translate3d(${clampedX * 96}px, ${clampedY * 36}px, 0)`;
+      mistRef.current.style.transform = `translate3d(${clampedX * 120}px, ${clampedY * 48}px, 0)`;
     }
   }, []);
 
@@ -63,7 +55,6 @@ export function MistCanvas() {
       const rect = surface.getBoundingClientRect();
       const dx = (clientX - drag.current.startX) / Math.max(rect.width, 1);
       const dy = (clientY - drag.current.startY) / Math.max(rect.height, 1);
-      // Amplify so a short drag is clearly visible.
       paint(drag.current.originX + dx * 2.4, drag.current.originY + dy * 2.4);
     };
 
@@ -159,14 +150,10 @@ export function MistCanvas() {
         userSelect: "none",
       }}
       role="application"
-      aria-label="Interactive mountain mist. Press and drag to shift the ridgelines."
+      aria-label="Interactive mountain mist. Press and drag to move the mist; mountains stay fixed."
     >
-      {/* Far range */}
-      <div
-        ref={farRef}
-        className="pointer-events-none absolute inset-[-12%] will-change-transform"
-        aria-hidden
-      >
+      {/* Mountains stay put */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
         <svg
           className="absolute inset-0 h-full w-full"
           viewBox="0 0 1440 720"
@@ -177,32 +164,16 @@ export function MistCanvas() {
               <stop offset="0%" stopColor="#3d7a5f" stopOpacity="0.55" />
               <stop offset="100%" stopColor="#1b4332" stopOpacity="0.15" />
             </linearGradient>
+            <linearGradient id="mistNear" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#2d6a4f" />
+              <stop offset="100%" stopColor="#0f2a1f" />
+            </linearGradient>
           </defs>
           <rect width="1440" height="720" fill="#0f2a1f" />
           <path
             d="M0 480 L160 340 L300 410 L460 260 L620 390 L780 230 L940 370 L1100 280 L1280 400 L1440 320 L1440 720 L0 720 Z"
             fill="url(#mistFar)"
           />
-        </svg>
-      </div>
-
-      {/* Near peaks */}
-      <div
-        ref={nearRef}
-        className="pointer-events-none absolute inset-[-12%] will-change-transform"
-        aria-hidden
-      >
-        <svg
-          className="absolute inset-0 h-full w-full"
-          viewBox="0 0 1440 720"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <defs>
-            <linearGradient id="mistNear" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#2d6a4f" />
-              <stop offset="100%" stopColor="#0f2a1f" />
-            </linearGradient>
-          </defs>
           <path
             d="M0 560 L200 400 L340 480 L500 320 L660 450 L820 290 L980 440 L1140 350 L1320 470 L1440 410 L1440 720 L0 720 Z"
             fill="url(#mistNear)"
@@ -221,10 +192,10 @@ export function MistCanvas() {
         </svg>
       </div>
 
-      {/* Drift mist */}
+      {/* Only mist drifts */}
       <div
         ref={mistRef}
-        className="pointer-events-none absolute inset-[-20%] will-change-transform"
+        className="pointer-events-none absolute inset-[-24%] will-change-transform"
         aria-hidden
       >
         <svg
@@ -233,11 +204,11 @@ export function MistCanvas() {
           preserveAspectRatio="xMidYMid slice"
         >
           <g fill="#f7f4ec">
-            <ellipse cx="260" cy="250" rx="260" ry="70" opacity="0.16" />
-            <ellipse cx="720" cy="200" rx="300" ry="80" opacity="0.12" />
-            <ellipse cx="1180" cy="280" rx="280" ry="75" opacity="0.14" />
-            <ellipse cx="480" cy="360" rx="220" ry="55" opacity="0.1" />
-            <ellipse cx="980" cy="390" rx="240" ry="60" opacity="0.11" />
+            <ellipse cx="260" cy="250" rx="260" ry="70" opacity="0.22" />
+            <ellipse cx="720" cy="200" rx="300" ry="80" opacity="0.18" />
+            <ellipse cx="1180" cy="280" rx="280" ry="75" opacity="0.2" />
+            <ellipse cx="480" cy="360" rx="220" ry="55" opacity="0.14" />
+            <ellipse cx="980" cy="390" rx="240" ry="60" opacity="0.16" />
           </g>
         </svg>
       </div>
@@ -246,7 +217,7 @@ export function MistCanvas() {
 
       <div className="pointer-events-none absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0f2a1f] via-[#0f2a1f]/70 to-transparent px-5 pb-5 pt-16">
         <p className="text-sm text-field/85">
-          Press and drag — far peaks, near ridges, and mist move at different speeds.
+          Press and drag — mountains stay put; only the mist drifts.
         </p>
       </div>
     </div>
