@@ -19,6 +19,7 @@ Vercel root directory should be `web`. Production and preview deploy from this a
 ## Structure
 
 - `/` — brand hero, playground preview, craft, hire CTA
-- `/crm` — custom CRM builds, showcasing Finti Sales OS features
+- `/crm` — custom CRM builds showcase (Finti Sales OS)
+- `/crm/[pillar]` — detailed Find / Close / Grow / Win feature pages
 - `/playground` — experiment index
 - `/playground/[slug]` — interactive labs (compass, mist, typeforge)

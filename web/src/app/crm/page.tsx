@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
 import { CrmCommandPreview } from "@/components/crm/CrmCommandPreview";
 import { CrmHero } from "@/components/crm/CrmHero";
-import { CrmFintiShowcase, CrmOffer, CrmPillars } from "@/components/crm/CrmSections";
+import {
+  CrmFintiShowcase,
+  CrmMotionGallery,
+  CrmOffer,
+  CrmPillars,
+  CrmPlatformFeatures,
+} from "@/components/crm/CrmSections";
 
 export const metadata: Metadata = {
   title: "Custom CRM Builds",
   description:
-    "Imperium Adventures builds custom CRMs and sales operating systems. See features from Finti Sales OS — Find, Close, Grow, Win.",
+    "Imperium Adventures builds custom CRMs and sales operating systems. Explore detailed Find, Close, Grow, and Win features from Finti Sales OS.",
   openGraph: {
     title: "Custom CRM Builds · Imperium Adventures",
     description:
-      "Purpose-built sales operating systems. Showcase: Finti Sales OS features engineered by Imperium Adventures.",
+      "Purpose-built sales operating systems. Detailed feature pages for Find, Close, Grow, and Win — engineered by Imperium Adventures.",
     type: "website",
   },
 };
@@ -26,6 +32,8 @@ export default function CrmPage() {
       </div>
       <CrmFintiShowcase />
       <CrmPillars />
+      <CrmMotionGallery />
+      <CrmPlatformFeatures />
       <CrmOffer />
     </>
   );

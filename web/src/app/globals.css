@@ -129,6 +129,75 @@ body {
   }
 }
 
+@keyframes pipeline-card {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 0 0 transparent;
+  }
+  50% {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(15, 42, 31, 0.12);
+  }
+}
+
+@keyframes health-shift {
+  from {
+    transform: translateX(-6%);
+  }
+  to {
+    transform: translateX(6%);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(1.1rem);
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bar-fill {
+  transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.score-ring {
+  transition: stroke-dasharray 0.35s linear;
+}
+
+.pipeline-card {
+  animation: pipeline-card 3.8s ease-in-out infinite;
+}
+
+.health-fill {
+  animation: health-shift 5.5s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .pipeline-card,
+  .health-fill,
+  .gold-pulse,
+  .mist-layer,
+  .bar-fill,
+  .score-ring {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 .animate-rise {
   animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
