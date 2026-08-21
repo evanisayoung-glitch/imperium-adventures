@@ -15,10 +15,10 @@ export function SiteFooter() {
             Open playground
           </Link>
           <a
-            href="mailto:evanisayoung@gmail.com?subject=Website%20project%20inquiry"
+            href="mailto:Imperiumadventures99@gmail.com?subject=Website%20project%20inquiry"
             className="transition-colors hover:text-gold-soft"
           >
-            evanisayoung@gmail.com
+            Imperiumadventures99@gmail.com
           </a>
           <p className="text-xs text-field/50">
             © {new Date().getFullYear()} Imperium Adventures LLC
