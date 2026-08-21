@@ -88,12 +88,16 @@ export function usePointerAim(
       surface.classList.remove("is-dragging");
     };
 
+    const onLostCapture = () => {
+      endDrag();
+    };
+
     window.addEventListener("pointermove", onWindowPointerMove, { passive: true });
     surface.addEventListener("pointerdown", onPointerDown, { passive: false });
     surface.addEventListener("pointermove", onPointerMove, { passive: false });
     surface.addEventListener("pointerup", endDrag);
     surface.addEventListener("pointercancel", endDrag);
-    surface.addEventListener("lostpointercapture", () => endDrag());
+    surface.addEventListener("lostpointercapture", onLostCapture);
     surface.addEventListener("touchstart", onTouchStart, { passive: false });
     surface.addEventListener("touchmove", onTouchMove, { passive: false });
     surface.addEventListener("touchend", onTouchEnd);
@@ -105,7 +109,7 @@ export function usePointerAim(
       surface.removeEventListener("pointermove", onPointerMove);
       surface.removeEventListener("pointerup", endDrag);
       surface.removeEventListener("pointercancel", endDrag);
-      surface.removeEventListener("lostpointercapture", endDrag as EventListener);
+      surface.removeEventListener("lostpointercapture", onLostCapture);
       surface.removeEventListener("touchstart", onTouchStart);
       surface.removeEventListener("touchmove", onTouchMove);
       surface.removeEventListener("touchend", onTouchEnd);
