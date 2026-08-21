@@ -43,7 +43,6 @@ body {
   color: var(--foreground);
   font-family: var(--font-body), Georgia, serif;
   -webkit-tap-highlight-color: color-mix(in srgb, var(--gold) 28%, transparent);
-  touch-action: manipulation;
 }
 
 .touch-range {
@@ -140,6 +139,15 @@ body {
 
 .needle-intro {
   animation: needle-settle 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.interactive-surface {
+  -webkit-touch-callout: none;
+  cursor: grab;
+}
+
+.interactive-surface.is-dragging {
+  cursor: grabbing;
 }
 
 .gold-pulse {
