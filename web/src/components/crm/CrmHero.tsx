@@ -4,7 +4,7 @@ import { CrmCommandPreview } from "@/components/crm/CrmCommandPreview";
 
 export function CrmHero() {
   return (
-    <section className="relative isolate min-h-[100svh] overflow-hidden text-field">
+    <section className="relative min-h-[100svh] overflow-hidden text-field">
       <MountainBackdrop />
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20">
         <div className="grid items-end gap-12 lg:grid-cols-[1.05fr_0.95fr]">

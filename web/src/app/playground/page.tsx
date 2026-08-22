@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PlaygroundIndexPage() {
   return (
-    <div className="bg-field px-5 pb-24 pt-28 sm:px-8">
+    <section className="bg-field px-5 pb-24 pt-28 sm:px-8">
       <div className="mx-auto max-w-6xl">
         <p className="text-xs tracking-[0.24em] uppercase text-gold">Playground</p>
         <h1 className="display mt-3 text-5xl text-forest sm:text-6xl">Lab floor</h1>
@@ -21,7 +21,7 @@ export default function PlaygroundIndexPage() {
             <li key={item.slug}>
               <Link
                 href={`/playground/${item.slug}`}
-                className="group flex flex-col gap-2 border border-forest/15 bg-field-warm/40 px-5 py-6 transition hover:border-gold/60 sm:flex-row sm:items-center sm:justify-between"
+                className="group flex flex-col gap-2 border border-forest/15 px-5 py-6 transition hover:border-gold/60 hover:bg-field-warm/40 sm:flex-row sm:items-center sm:justify-between"
               >
                 <div>
                   <p className="display text-2xl text-forest">{item.title}</p>
@@ -35,6 +35,6 @@ export default function PlaygroundIndexPage() {
           ))}
         </ul>
       </div>
-    </div>
+    </section>
   );
 }

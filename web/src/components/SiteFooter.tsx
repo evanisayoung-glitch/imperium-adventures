@@ -12,6 +12,12 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-col gap-1 text-sm text-field/75 sm:items-end">
           <Link
+            href="/playground/wordmark"
+            className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
+          >
+            Particle wordmark
+          </Link>
+          <Link
             href="/crm"
             className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
           >

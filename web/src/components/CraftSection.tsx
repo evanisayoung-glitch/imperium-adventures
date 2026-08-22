@@ -11,6 +11,11 @@ const crafts: Array<{ title: string; body: string; href?: string }> = [
     href: "/crm",
   },
   {
+    title: "Particle wordmarks",
+    body: "A page-wide field of dots that only forms your brand when a visitor earns it — then ships on your site.",
+    href: "/playground/wordmark",
+  },
+  {
     title: "Motion with purpose",
     body: "Subtle animation that guides attention and makes the product feel alive.",
   },
