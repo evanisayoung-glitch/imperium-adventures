@@ -32,8 +32,12 @@ export function CrmCommandPreview() {
       </div>
 
       <div className="grid grid-cols-3 gap-2 border-b border-field/10 p-3">
-        {kpis.map((kpi) => (
-          <div key={kpi.label} className="animate-rise bg-field/[0.06] px-2.5 py-2">
+        {kpis.map((kpi, index) => (
+          <div
+            key={kpi.label}
+            className="animate-rise bg-field/[0.06] px-2.5 py-2"
+            style={{ animationDelay: `${0.08 + index * 0.1}s` }}
+          >
             <p className="text-[9px] tracking-[0.14em] uppercase text-field/55">
               {kpi.label}
             </p>

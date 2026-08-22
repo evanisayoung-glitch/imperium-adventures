@@ -36,6 +36,27 @@ export function CrmHero() {
                 See Finti features
               </Link>
             </div>
+            <nav
+              aria-label="CRM pillars"
+              className="animate-rise-delay-3 mt-8 flex flex-wrap gap-x-5 gap-y-2 text-[11px] tracking-[0.18em] uppercase text-field/55"
+            >
+              {(
+                [
+                  ["find", "Find"],
+                  ["close", "Close"],
+                  ["grow", "Grow"],
+                  ["win", "Win"],
+                ] as const
+              ).map(([slug, label]) => (
+                <Link
+                  key={slug}
+                  href={`/crm/${slug}`}
+                  className="transition hover:text-gold-soft"
+                >
+                  {label}
+                </Link>
+              ))}
+            </nav>
           </div>
           <div className="animate-rise-delay-2 hidden justify-self-end lg:block">
             <CrmCommandPreview />
