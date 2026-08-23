@@ -3,12 +3,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   curatedPaintings,
-  fetchMetObject,
   pickPaintingForDay,
-  type MetObjectResponse,
   type MetPainting,
 } from "@/lib/met-paintings";
 import { generateRevealMarks, paintReveal } from "@/lib/paint-reveal";
+import { usePaintingLibrary } from "@/hooks/usePaintingLibrary";
 
 /** Playground demo — client deployments use 25 min focus / 5 min break. */
 const FOCUS_SECONDS = 60;
@@ -85,9 +84,9 @@ export function PomodoroTimer() {
   const marksRef = useRef<ReturnType<typeof generateRevealMarks>>([]);
   const sessionStartProgress = useRef(0);
   const sessionStartTime = useRef<number | null>(null);
+  const library = usePaintingLibrary();
 
   const [painting, setPainting] = useState<MetPainting>(() => pickPaintingForDay());
-  const [metData, setMetData] = useState<MetObjectResponse | null>(null);
   const [imageReady, setImageReady] = useState(false);
   const [phase, setPhase] = useState<Phase>("idle");
   const [remaining, setRemaining] = useState(FOCUS_SECONDS);
@@ -99,8 +98,7 @@ export function PomodoroTimer() {
   const phaseLabel =
     phase === "focus" ? "Focus" : phase === "break" ? "Break" : "Ready";
   const isRunning = phase !== "idle" && endsAt !== null;
-
-  const imageUrl = `/api/met-image?objectId=${painting.objectId}`;
+  const metData = library.getMetadata(painting.objectId);
 
   const redraw = useCallback(
     (progress: number) => {
@@ -191,37 +189,17 @@ export function PomodoroTimer() {
     setHydrated(true);
   }, []);
 
-  // Fetch Met metadata.
+  // Use preloaded image from gallery library.
   useEffect(() => {
-    let cancelled = false;
-    fetchMetObject(painting.objectId).then((data) => {
-      if (!cancelled && data) setMetData(data);
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, [painting.objectId]);
-
-  // Load painting image.
-  useEffect(() => {
-    if (!imageUrl) return;
-    setImageReady(false);
-    const image = new Image();
-    image.decoding = "async";
-    image.src = imageUrl;
-    image.onload = () => {
+    const image = library.getImage(painting.objectId);
+    if (image) {
       imageRef.current = image;
       setImageReady(true);
-    };
-    image.onerror = () => {
-      imageRef.current = null;
-      setImageReady(false);
-    };
-    return () => {
-      image.onload = null;
-      image.onerror = null;
-    };
-  }, [imageUrl]);
+      return;
+    }
+    imageRef.current = null;
+    setImageReady(false);
+  }, [library.ready, library.loadedCount, painting.objectId]);
 
   // Canvas sizing.
   useEffect(() => {
@@ -339,7 +317,6 @@ export function PomodoroTimer() {
   const nextPainting = () => {
     const index = curatedPaintings.findIndex((item) => item.objectId === painting.objectId);
     const next = curatedPaintings[(index + 1) % curatedPaintings.length]!;
-    setMetData(null);
     setPainting(next);
     setRevealProgress(0);
     setPhase("idle");
@@ -388,8 +365,12 @@ export function PomodoroTimer() {
             <canvas ref={paintingRef} className="absolute inset-0 h-full w-full" />
             <canvas ref={coverRef} className="absolute inset-0 h-full w-full" />
             {!imageReady && (
-              <div className="absolute inset-0 flex items-center justify-center bg-field-warm/80">
-                <p className="text-xs tracking-[0.2em] uppercase text-muted">Loading from The Met…</p>
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-field-warm/80">
+                <p className="text-xs tracking-[0.2em] uppercase text-muted">
+                  {library.ready
+                    ? "Loading painting…"
+                    : `Loading gallery ${library.loadedCount}/${library.totalCount}…`}
+                </p>
               </div>
             )}
           </div>
