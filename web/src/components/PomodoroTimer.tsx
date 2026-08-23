@@ -8,15 +8,16 @@ import {
   type MetObjectResponse,
   type MetPainting,
 } from "@/lib/met-paintings";
-import { generateBrushStrokes, paintReveal } from "@/lib/paint-reveal";
+import { generateRevealMarks, paintReveal } from "@/lib/paint-reveal";
 
-const FOCUS_SECONDS = 25 * 60;
-const BREAK_SECONDS = 5 * 60;
-const STROKE_COUNT = 900;
+/** Playground demo — client deployments use 25 min focus / 5 min break. */
+const FOCUS_SECONDS = 60;
+const BREAK_SECONDS = 15;
+const STROKE_COUNT = 1400;
 const COVER_COLOR = "#e8e2d4";
-const STORAGE_KEY = "imperium-pomodoro";
-/** Each completed focus session reveals a quarter of the canvas. */
-const REVEAL_PER_SESSION = 0.25;
+const STORAGE_KEY = "imperium-pomodoro-v2";
+/** Demo: one short session reveals the full painting. Production: ~25% per 25-min session. */
+const REVEAL_PER_SESSION = 1;
 
 type Phase = "idle" | "focus" | "break";
 
@@ -81,7 +82,7 @@ export function PomodoroTimer() {
   const paintingRef = useRef<HTMLCanvasElement>(null);
   const coverRef = useRef<HTMLCanvasElement>(null);
   const imageRef = useRef<HTMLImageElement | null>(null);
-  const strokesRef = useRef<ReturnType<typeof generateBrushStrokes>>([]);
+  const marksRef = useRef<ReturnType<typeof generateRevealMarks>>([]);
   const sessionStartProgress = useRef(0);
   const sessionStartTime = useRef<number | null>(null);
 
@@ -127,7 +128,7 @@ export function PomodoroTimer() {
         ctx.fillRect(0, 0, width, height);
       }
 
-      paintReveal(coverCtx, strokesRef.current, progress, COVER_COLOR);
+      paintReveal(coverCtx, marksRef.current, progress, COVER_COLOR);
     },
     [imageReady],
   );
@@ -150,7 +151,7 @@ export function PomodoroTimer() {
       canvas.style.height = `${rect.height}px`;
     }
 
-    strokesRef.current = generateBrushStrokes(w, h, STROKE_COUNT, painting.objectId);
+    marksRef.current = generateRevealMarks(w, h, STROKE_COUNT, painting.objectId);
     redraw(revealProgress);
   }, [painting.objectId, redraw, revealProgress]);
 
@@ -360,6 +361,13 @@ export function PomodoroTimer() {
 
   return (
     <div className="mx-auto max-w-3xl">
+      <p className="mb-4 border border-gold/30 bg-gold/10 px-4 py-3 text-center text-xs leading-relaxed text-muted">
+        <span className="tracking-[0.14em] uppercase text-forest">Playground demo</span>
+        {" — "}
+        This version runs on 1-minute focus sessions so you can see the reveal quickly. On a client
+        site, we&apos;d use 25-minute sessions and a much slower reveal — the full painting emerges
+        over a full workday, not a single minute.
+      </p>
       <div className="border border-forest/15 bg-field-warm/50 p-5 sm:p-8">
         {/* Gallery frame */}
         <div
@@ -419,10 +427,10 @@ export function PomodoroTimer() {
             </div>
             <p className="mt-3 text-xs text-muted">
               {phase === "focus"
-                ? "The painting reveals as you focus."
+                ? "Cotton dabs and brush sweeps reveal the painting as you focus."
                 : phase === "break"
                   ? "Rest your eyes. The canvas waits."
-                  : "25 minutes on · 5 minutes off"}
+                  : "1 min demo focus · 15 sec break"}
             </p>
           </div>
 
