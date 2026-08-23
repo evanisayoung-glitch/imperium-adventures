@@ -258,7 +258,7 @@ export function PomodoroTimer() {
 
       if (left <= 0) {
         if (phase === "focus") {
-          const completed = Math.min(1, sessionStartProgress.current + REVEAL_PER_SESSION);
+          const completed = 1;
           setRevealProgress(completed);
           redraw(completed);
           sessionStartTime.current = null;
@@ -470,7 +470,7 @@ export function PomodoroTimer() {
             </button>
           </div>
 
-          {revealProgress >= 0.99 && (
+          {revealProgress >= 1 && (
             <button
               type="button"
               onClick={nextPainting}
