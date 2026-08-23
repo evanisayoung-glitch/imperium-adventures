@@ -30,6 +30,12 @@ export const experiments: Experiment[] = [
     tagline: "Live display type playground for headlines that feel like Imperium.",
     status: "live",
   },
+  {
+    slug: "pomodoro",
+    title: "Gallery Pomodoro",
+    tagline: "A focus timer that slowly paints masterpieces from The Met as you work.",
+    status: "live",
+  },
 ];
 
 export function getExperiment(slug: string) {
