@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LivingCompass } from "@/components/LivingCompass";
 import { MistCanvas } from "@/components/MistCanvas";
+import { PomodoroTimer } from "@/components/PomodoroTimer";
 import { Typeforge } from "@/components/Typeforge";
 import { WordmarkLab } from "@/components/WordmarkLab";
 import { experiments, getExperiment } from "@/lib/experiments";
@@ -58,6 +59,7 @@ export default async function ExperimentPage({ params }: Props) {
               <Typeforge />
             </div>
           )}
+          {slug === "pomodoro" && <PomodoroTimer />}
         </div>
       </div>
     </section>
