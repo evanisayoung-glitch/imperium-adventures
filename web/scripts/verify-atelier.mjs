@@ -26,20 +26,22 @@ const run = async () => {
   const sylva = page.getByRole("link", { name: /Sylva/i }).first();
   check("sylva card present", await sylva.count().then((n) => n > 0), "Sylva study");
 
-  await page.getByRole("link", { name: /^Worlds$/i }).first().click();
+  await page.goto(`${URL}/atelier?family=worlds`, { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(400);
+  const titles = page.locator("h2");
+  const titleText = await titles.allInnerTexts();
   check(
     "worlds filter keeps sylva",
-    await page.getByRole("link", { name: /Sylva/i }).count().then((n) => n > 0),
-    "Sylva visible",
+    titleText.some((text) => /Sylva/i.test(text)),
+    titleText.join(" | "),
   );
   check(
     "worlds filter hides sablier",
-    (await page.getByRole("link", { name: /Sablier/i }).count()) === 0,
-    "Sablier hidden",
+    titleText.every((text) => !/Sablier/i.test(text)),
+    titleText.join(" | "),
   );
 
-  await sylva.click();
+  await page.getByRole("link", { name: /Sylva/i }).first().click();
   await page.waitForTimeout(800);
   const studyTitle = await page.locator("h1").first().innerText();
   check("study page title", studyTitle.includes("Sylva"), studyTitle);

@@ -13,10 +13,10 @@ export function MaisonLights({
 }) {
   return (
     <>
-      <ambientLight intensity={0.16 * intensity} color="#f4efe3" />
+      <ambientLight intensity={0.28 * intensity} color="#f4efe3" />
       <directionalLight
         position={[4.2, 6.4, 2.4]}
-        intensity={1.55 * intensity}
+        intensity={1.85 * intensity}
         color="#f6e7c4"
       />
       <spotLight

@@ -17,6 +17,7 @@ export type AtelierStudy = {
   blurb: string;
   statement: string;
   variants: AtelierVariant[];
+  camera: { position: [number, number, number]; fov: number };
 };
 
 export const studies: AtelierStudy[] = [
@@ -35,6 +36,7 @@ export const studies: AtelierStudy[] = [
       { id: "midnight", label: "Midnight" },
       { id: "champagne", label: "Champagne" },
     ],
+    camera: { position: [0, 1.15, 5.1], fov: 36 },
   },
   {
     slug: "or",
@@ -51,6 +53,7 @@ export const studies: AtelierStudy[] = [
       { id: "star", label: "Star" },
       { id: "ring", label: "Ring" },
     ],
+    camera: { position: [0, 0.15, 3.15], fov: 32 },
   },
   {
     slug: "nimbus",
@@ -67,6 +70,7 @@ export const studies: AtelierStudy[] = [
       { id: "constellation", label: "Constellation" },
       { id: "veil", label: "Veil" },
     ],
+    camera: { position: [0, 0.2, 3.6], fov: 38 },
   },
   {
     slug: "rose",
@@ -83,6 +87,7 @@ export const studies: AtelierStudy[] = [
       { id: "enamel", label: "Enamel" },
       { id: "ivory", label: "Ivory" },
     ],
+    camera: { position: [0, 0.55, 3.4], fov: 32 },
   },
   {
     slug: "velours",
@@ -99,6 +104,7 @@ export const studies: AtelierStudy[] = [
       { id: "ink", label: "Ink" },
       { id: "forest", label: "Forest" },
     ],
+    camera: { position: [0, 0.2, 3.7], fov: 34 },
   },
   {
     slug: "halo",
@@ -115,6 +121,7 @@ export const studies: AtelierStudy[] = [
       { id: "eclipse", label: "Eclipse" },
       { id: "dawn", label: "Dawn" },
     ],
+    camera: { position: [0, 0.1, 3.5], fov: 32 },
   },
   {
     slug: "sablier",
@@ -131,6 +138,7 @@ export const studies: AtelierStudy[] = [
       { id: "still", label: "Still" },
       { id: "reverse", label: "Reverse" },
     ],
+    camera: { position: [0, 0.15, 4.2], fov: 30 },
   },
   {
     slug: "blason",
@@ -147,6 +155,7 @@ export const studies: AtelierStudy[] = [
       { id: "gilt", label: "Full gilt" },
       { id: "nocturne", label: "Nocturne" },
     ],
+    camera: { position: [0, 0.1, 3.35], fov: 32 },
   },
 ];
 

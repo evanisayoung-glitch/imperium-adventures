@@ -10,10 +10,11 @@ function metal(color: string) {
     <meshPhysicalMaterial
       color={color}
       metalness={1}
-      roughness={0.16}
-      clearcoat={0.65}
-      clearcoatRoughness={0.12}
+      roughness={0.12}
+      clearcoat={0.8}
+      clearcoatRoughness={0.08}
       reflectivity={1}
+      envMapIntensity={1.4}
     />
   );
 }
@@ -61,7 +62,8 @@ export function OrScene({ variant, paused }: { variant: string; paused: boolean 
   return (
     <>
       <color attach="background" args={["#080806"]} />
-      <MaisonLights intensity={1.15} />
+      <MaisonLights intensity={1.45} />
+      <pointLight position={[1.6, 1.2, 2.2]} intensity={1.1} color="#fff1c8" />
       <SlowOrbit speed={0.22} paused={paused}>
         <Sculpture variant={variant} />
       </SlowOrbit>

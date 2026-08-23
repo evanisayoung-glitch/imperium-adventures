@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
+import { getStudy } from "@/lib/atelier";
 import { usePrefersReducedMotion } from "./usePrefersReducedMotion";
 
 const StudioCanvas = dynamic(() => import("./StudioCanvas").then((mod) => mod.StudioCanvas), {
@@ -46,7 +47,11 @@ export function StudyPreview({
   return (
     <div ref={host} className={`relative overflow-hidden bg-atelier-void ${className ?? ""}`}>
       {visible ? (
-        <StudioCanvas dpr={dpr ?? 1.1} className="h-full w-full">
+        <StudioCanvas
+          dpr={dpr ?? 1.1}
+          className="h-full w-full"
+          camera={getStudy(slug)?.camera}
+        >
           <StudyStage slug={slug} variant={variant} paused={paused ?? reduced} />
         </StudioCanvas>
       ) : (

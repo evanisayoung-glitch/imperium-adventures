@@ -12,7 +12,7 @@ const FIREFLY_COUNT = 80;
 
 function palette(variant: string) {
   if (variant === "midnight") {
-    return { canopy: "#0b2418", trunk: "#1a140c", fog: "#050806", fire: gold.gilt };
+    return { canopy: "#163d2c", trunk: "#2a1d10", fog: "#070a08", fire: gold.gilt };
   }
   if (variant === "champagne") {
     return { canopy: "#3d4a2a", trunk: "#3a2c16", fog: "#16140e", fire: gold.bright };
