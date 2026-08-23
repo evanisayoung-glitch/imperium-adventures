@@ -12,6 +12,13 @@
   --muted: #4a6356;
   --background: var(--field);
   --foreground: var(--ink);
+  --atelier-void: #080806;
+  --atelier-panel: #10100d;
+  --atelier-raised: #17150f;
+  --atelier-line: rgba(201, 162, 39, 0.18);
+  --atelier-ivory: #f4efe3;
+  --atelier-champagne: #e8d5a3;
+  --atelier-muted: #8a8170;
 }
 
 @theme inline {
@@ -28,6 +35,14 @@
   --color-muted: var(--muted);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+  --color-atelier-void: var(--atelier-void);
+  --color-atelier-panel: var(--atelier-panel);
+  --color-atelier-raised: var(--atelier-raised);
+  --color-atelier-line: var(--atelier-line);
+  --color-atelier-ivory: var(--atelier-ivory);
+  --color-atelier-champagne: var(--atelier-champagne);
+  --color-atelier-muted: var(--atelier-muted);
 }
 
 * {
@@ -238,6 +253,20 @@ body {
 .display {
   font-family: var(--font-display), Georgia, "Times New Roman", serif;
   letter-spacing: 0.04em;
+}
+
+.mono {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.atelier-hairline {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--atelier-champagne) 55%, transparent),
+    transparent
+  );
 }
 
 .rule-gold {

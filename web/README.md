@@ -18,7 +18,9 @@ Vercel root directory should be `web`. Production and preview deploy from this a
 
 ## Structure
 
-- `/` — brand hero, playground preview, craft, hire CTA
+- `/` — brand hero, atelier teaser, playground preview, craft, hire CTA
+- `/atelier` — private Three.js cabinet (live studies, filters, commission)
+- `/atelier/[slug]` — a single study with finishes
 - `/crm` — custom CRM builds showcase (Finti Sales OS)
 - `/crm/[pillar]` — detailed Find / Close / Grow / Win feature pages
 - `/playground` — experiment index

@@ -21,6 +21,12 @@ export function HireSection() {
             Start a project
           </a>
           <Link
+            href="/atelier"
+            className="inline-flex min-h-11 items-center border border-field/35 px-6 py-3 text-sm tracking-[0.12em] uppercase text-field transition hover:border-gold hover:text-gold-soft active:border-gold active:text-gold-soft"
+          >
+            Atelier
+          </Link>
+          <Link
             href="/playground/wordmark"
             className="inline-flex min-h-11 items-center border border-field/35 px-6 py-3 text-sm tracking-[0.12em] uppercase text-field transition hover:border-gold hover:text-gold-soft active:border-gold active:text-gold-soft"
           >
