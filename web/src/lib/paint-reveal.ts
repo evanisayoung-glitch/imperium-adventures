@@ -70,6 +70,34 @@ export function generateRevealMarks(
     [marks[i], marks[j]] = [marks[j]!, marks[i]!];
   }
 
+  // Perimeter dabs so edges and corners get covered during the reveal.
+  const step = Math.max(14, Math.min(width, height) / 36);
+  const inset = 6;
+  for (let x = 0; x <= width; x += step) {
+    for (const y of [inset + rand() * 10, height - inset - rand() * 10]) {
+      marks.push({
+        kind: "dab",
+        x,
+        y,
+        size: 16 + rand() * 22,
+        rotation: rand() * Math.PI * 2,
+        seed: Math.floor(rand() * 1_000_000),
+      });
+    }
+  }
+  for (let y = 0; y <= height; y += step) {
+    for (const x of [inset + rand() * 10, width - inset - rand() * 10]) {
+      marks.push({
+        kind: "dab",
+        x,
+        y,
+        size: 16 + rand() * 22,
+        rotation: rand() * Math.PI * 2,
+        seed: Math.floor(rand() * 1_000_000),
+      });
+    }
+  }
+
   return marks;
 }
 
@@ -179,12 +207,19 @@ export function paintReveal(
   coverColor: string,
 ) {
   const { width, height } = ctx.canvas;
+  const clamped = Math.min(1, Math.max(0, progress));
+
+  if (clamped >= 1) {
+    ctx.clearRect(0, 0, width, height);
+    return;
+  }
+
   ctx.globalCompositeOperation = "source-over";
   ctx.fillStyle = coverColor;
   ctx.fillRect(0, 0, width, height);
 
-  const revealCount = Math.floor(progress * marks.length);
-  if (revealCount === 0 && progress <= 0) return;
+  const revealCount = Math.floor(clamped * marks.length);
+  if (revealCount === 0 && clamped <= 0) return;
 
   ctx.globalCompositeOperation = "destination-out";
 
@@ -192,9 +227,18 @@ export function paintReveal(
     drawMark(ctx, marks[i]!);
   }
 
-  const partial = progress * marks.length - revealCount;
+  const partial = clamped * marks.length - revealCount;
   if (partial > 0 && revealCount < marks.length) {
     drawMark(ctx, marks[revealCount]!, partial);
+  }
+
+  // Lift any remaining veil in the final stretch so 100% is fully uncovered.
+  if (clamped >= 0.88) {
+    const finish = (clamped - 0.88) / 0.12;
+    ctx.globalAlpha = finish;
+    ctx.fillStyle = "rgba(0,0,0,1)";
+    ctx.fillRect(0, 0, width, height);
+    ctx.globalAlpha = 1;
   }
 
   ctx.globalCompositeOperation = "source-over";

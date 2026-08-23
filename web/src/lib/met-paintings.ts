@@ -25,10 +25,10 @@ export const curatedPaintings: MetPainting[] = [
     year: "1889",
   },
   {
-    objectId: 437133,
-    title: "Bridge over a Pond of Water Lilies",
-    artist: "Claude Monet",
-    year: "1899",
+    objectId: 437430,
+    title: "By the Seashore",
+    artist: "Pierre-Auguste Renoir",
+    year: "1883",
   },
   {
     objectId: 437394,
@@ -87,4 +87,45 @@ export async function fetchMetObject(objectId: number): Promise<MetObjectRespons
   } catch {
     return null;
   }
+}
+
+export function imageProxyUrl(objectId: number) {
+  return `/api/met-image?objectId=${objectId}`;
+}
+
+export async function preloadPaintingImage(objectId: number): Promise<HTMLImageElement> {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.decoding = "async";
+    image.onload = () => resolve(image);
+    image.onerror = () => reject(new Error(`Failed to load painting ${objectId}`));
+    image.src = imageProxyUrl(objectId);
+  });
+}
+
+export async function preloadAllPaintings() {
+  const results = await Promise.allSettled(
+    curatedPaintings.map(async (item) => {
+      const [meta, image] = await Promise.all([
+        fetchMetObject(item.objectId),
+        preloadPaintingImage(item.objectId),
+      ]);
+      return { objectId: item.objectId, meta, image };
+    }),
+  );
+
+  const loaded: { objectId: number; meta: MetObjectResponse | null; image: HTMLImageElement }[] = [];
+  const failed: number[] = [];
+
+  for (let i = 0; i < results.length; i++) {
+    const result = results[i]!;
+    const objectId = curatedPaintings[i]!.objectId;
+    if (result.status === "fulfilled") {
+      loaded.push(result.value);
+    } else {
+      failed.push(objectId);
+    }
+  }
+
+  return { loaded, failed };
 }
