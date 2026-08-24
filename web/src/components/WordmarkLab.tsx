@@ -28,14 +28,7 @@ export function WordmarkLab({
 }) {
   const host = useRef<HTMLDivElement>(null);
   const field = useRef<ParticleWordmarkInstance | null>(null);
-  const [word, setWord] = useState(() => {
-    if (typeof window === "undefined") return "IMPERIUM";
-    try {
-      return normalizeWord(sessionStorage.getItem("imperium-word") || "IMPERIUM");
-    } catch {
-      return "IMPERIUM";
-    }
-  });
+  const [word, setWord] = useState("IMPERIUM");
 
   useEffect(() => {
     const node = host.current;

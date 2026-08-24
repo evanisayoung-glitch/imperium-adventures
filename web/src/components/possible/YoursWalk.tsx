@@ -1,48 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { StudyPreview } from "@/components/atelier/StudyPreview";
 import { WordmarkLab } from "@/components/WordmarkLab";
 import { atmospheres, getAtmosphere, shippedSurfaces, type Atmosphere } from "@/lib/possibility";
 
-function savedStudy() {
-  try {
-    return sessionStorage.getItem("imperium-study");
-  } catch {
-    return null;
-  }
-}
-
-function saveStudy(slug: string) {
-  try {
-    sessionStorage.setItem("imperium-study", slug);
-  } catch {
-    /* ignore */
-  }
-}
-
-function savedWord() {
-  try {
-    return sessionStorage.getItem("imperium-word") || "YOURS";
-  } catch {
-    return "YOURS";
-  }
-}
-
 export function YoursWalk({ initialStudy }: { initialStudy?: string }) {
-  const [selected, setSelected] = useState<Atmosphere>(() => {
-    if (initialStudy) return getAtmosphere(initialStudy) ?? atmospheres[0];
-    if (typeof window === "undefined") return atmospheres[0];
-    return getAtmosphere(savedStudy()) ?? atmospheres[0];
-  });
-  const [word, setWord] = useState(() =>
-    typeof window === "undefined" ? "YOURS" : savedWord(),
+  const [selected, setSelected] = useState<Atmosphere>(
+    () => getAtmosphere(initialStudy) ?? atmospheres[0],
   );
-
-  useEffect(() => {
-    saveStudy(selected.slug);
-  }, [selected]);
+  const [word, setWord] = useState("IMPERIUM");
 
   const inquireHref = `/inquire?study=${selected.slug}&word=${encodeURIComponent(word)}&need=first-screen`;
 
