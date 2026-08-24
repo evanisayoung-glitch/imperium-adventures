@@ -8,6 +8,7 @@ import { crafts, inquireHref, type CraftId } from "@/lib/crafts";
 import { atmospheres, getAtmosphere, type Atmosphere } from "@/lib/possibility";
 import { ChapterFrame } from "./ChapterFrame";
 import { ParticleStage } from "./ParticleStage";
+import { SpectrumField } from "./SpectrumField";
 
 const PaintingReveal = dynamic(
   () => import("./PaintingReveal").then((mod) => mod.PaintingReveal),
@@ -39,12 +40,12 @@ export function YoursComposer({ initialStudy }: { initialStudy?: string }) {
           index="01"
           kicker="Yours"
           title={word || "IMPERIUM"}
-          body="Type a short word. Scrub or tap-mash until it gathers. This is how a house meets its name."
+          body="Type a short word. Scrub or tap until it gathers. This is how a house meets its name."
           href={href}
           hrefLabel="Begin with this mark"
         >
           <label className="mt-8 block">
-            <span className="mono text-[11px] tracking-[0.24em] uppercase text-ivory/40">Brand word</span>
+            <span className="mono text-[11px] tracking-[0.24em] uppercase text-ivory/40">Your word</span>
             <input
               value={word}
               onChange={(event) => setWord(normalizeWord(event.target.value))}
@@ -64,11 +65,24 @@ export function YoursComposer({ initialStudy }: { initialStudy?: string }) {
         <ChapterFrame
           index="02"
           kicker="Reveal"
-          title="Patience as a first screen."
-          body="We install this as a landing, a wait, a daily ritual. On a client site the painting earns itself over a workday — here it reveals so you can see the craft."
-          href={inquireHref(crafts[1]!, { word })}
-          hrefLabel="Commission a reveal"
+          title="A painting that waits."
+          body="On your site the masterpiece earns itself while someone stays. Here it lifts quickly so you can see the feeling."
+          href={inquireHref(crafts.find((item) => item.id === "reveal")!, { word })}
+          hrefLabel="I want the painting"
           ink="void"
+        />
+      </section>
+
+      <section className="relative min-h-[100svh] overflow-hidden">
+        <SpectrumField word={word} />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-void/30 via-transparent to-transparent" />
+        <ChapterFrame
+          index="03"
+          kicker="Color"
+          title="Find your color."
+          body="Move across every hue. The word takes rose, gold, jade, indigo — whatever the house is."
+          href={inquireHref(crafts.find((item) => item.id === "spectrum")!, { word })}
+          hrefLabel="I want the colors"
         />
       </section>
 
@@ -82,7 +96,7 @@ export function YoursComposer({ initialStudy }: { initialStudy?: string }) {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void/82 via-void/20 to-void/45" />
         <div className="pointer-events-none relative z-10 flex min-h-[100svh] flex-col justify-between px-6 pb-16 pt-28 md:px-12 md:pb-20 md:pt-32">
           <div className="max-w-lg">
-            <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">03 — Threshold</p>
+            <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">04 — Doorway</p>
             <h2 className="display mt-5 text-[clamp(2.75rem,7vw,5.5rem)] leading-[0.86] tracking-tight">
               {selected.title}
             </h2>
@@ -109,7 +123,7 @@ export function YoursComposer({ initialStudy }: { initialStudy?: string }) {
             </ul>
             <p className="mt-8">
               <Link href={`/atelier/${selected.slug}`} className="link-gold">
-                Open the study
+                See it closer
               </Link>
             </p>
           </div>
@@ -120,7 +134,7 @@ export function YoursComposer({ initialStudy }: { initialStudy?: string }) {
         <div className="mx-auto max-w-[1180px]">
           <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">Commission</p>
           <h2 className="display mt-4 max-w-2xl text-[clamp(2.2rem,5vw,3.8rem)] leading-[0.92] tracking-tight">
-            Choose the engine for the opening.
+            What should guests see first?
           </h2>
           <ul className="mt-12 grid gap-3">
             {crafts
@@ -150,7 +164,7 @@ export function YoursComposer({ initialStudy }: { initialStudy?: string }) {
               Begin a commission
             </Link>
             <Link href={`/engage?study=${selected.slug}`} className="link-gold text-[15px]">
-              See investment
+              See what it costs
             </Link>
           </div>
         </div>

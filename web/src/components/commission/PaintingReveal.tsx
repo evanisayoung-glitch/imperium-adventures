@@ -174,7 +174,7 @@ export function PaintingReveal({
       <canvas ref={coverRef} className="absolute inset-0" />
       {!imageReady ? (
         <div className="absolute inset-0 flex items-center justify-center bg-paper">
-          <p className="mono text-[11px] tracking-[0.28em] uppercase text-ink/40">Preparing the canvas</p>
+          <p className="mono text-[11px] tracking-[0.28em] uppercase text-ink/40">The painting is arriving</p>
         </div>
       ) : null}
       {showPlaque ? (

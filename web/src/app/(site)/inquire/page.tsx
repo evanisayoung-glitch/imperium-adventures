@@ -5,7 +5,7 @@ import { InquireForm } from "@/components/possible/InquireForm";
 export const metadata: Metadata = {
   title: "Inquire",
   description:
-    "Begin a website commission with Imperium Adventures — brief, budget, and the engine for the first screen.",
+    "Begin a website with Imperium Adventures — who you are, what it should cost, and what guests see first.",
 };
 
 type PageProps = {
@@ -25,7 +25,7 @@ export default async function InquirePage({ searchParams }: PageProps) {
     <LetterPage
       kicker="Inquire"
       title="Write the studio."
-      lede="The house, the launch, the band, the engine. We reply with next steps — usually within a day."
+      lede="Who you are, what you are opening, what it should cost. We write back — usually within a day."
     >
       <InquireForm prefill={prefill} />
     </LetterPage>

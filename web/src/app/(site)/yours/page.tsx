@@ -4,7 +4,7 @@ import { YoursComposer } from "@/components/commission/YoursComposer";
 export const metadata: Metadata = {
   title: "Yours",
   description:
-    "Try a particle identity, a painting reveal, and a Three.js threshold — then commission the opening for your site.",
+    "Try your name in gold dust, a painting that waits, and every color you own — then ask us to put it on your site.",
 };
 
 type PageProps = {

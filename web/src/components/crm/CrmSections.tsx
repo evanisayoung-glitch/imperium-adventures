@@ -197,7 +197,7 @@ export function CrmOffer() {
             </li>
             <li className="flex gap-3">
               <span className="text-gold-soft">—</span>
-              Next.js + modern backends, ready for multi-user scale
+              Built to last as the team grows
             </li>
           </ul>
           <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[16px]">

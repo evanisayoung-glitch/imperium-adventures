@@ -6,9 +6,11 @@ import { useState } from "react";
 import { StudyPreview } from "@/components/atelier/StudyPreview";
 import { LivingCompass } from "@/components/LivingCompass";
 import { MistCanvas } from "@/components/MistCanvas";
-import { crafts, inquireHref } from "@/lib/crafts";
+import { crafts, getCraft, inquireHref } from "@/lib/crafts";
 import { ChapterFrame } from "./ChapterFrame";
 import { ParticleStage } from "./ParticleStage";
+import { SilkCloth } from "./SilkCloth";
+import { SpectrumField } from "./SpectrumField";
 
 const PaintingReveal = dynamic(
   () => import("./PaintingReveal").then((mod) => mod.PaintingReveal),
@@ -23,6 +25,12 @@ function normalizeWord(value: string) {
 
 export function HomeShow() {
   const [word, setWord] = useState("IMPERIUM");
+  const identity = getCraft("identity")!;
+  const reveal = getCraft("reveal")!;
+  const spectrum = getCraft("spectrum")!;
+  const silk = getCraft("silk")!;
+  const threshold = getCraft("threshold")!;
+  const atmosphere = getCraft("atmosphere")!;
 
   return (
     <div className="bg-void text-ivory">
@@ -31,11 +39,11 @@ export function HomeShow() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-void/55 via-transparent to-void/75" />
         <ChapterFrame
           index="01"
-          kicker="Identity"
+          kicker="Name"
           title="Your name is earned."
-          body="Gold dust. Visitors scrub until the word gathers. This is the first screen we install — not a logo file dropped on a template."
-          href={inquireHref(crafts[0]!, { word })}
-          hrefLabel="Commission this"
+          body="Gold dust. Guests move a little before your word appears. This is the first thing we put on a house — not a logo file on a ready-made page."
+          href={inquireHref(identity, { word })}
+          hrefLabel="I want this"
         >
           <p className="mono mt-6 text-[11px] tracking-[0.18em] uppercase text-ivory/35">
             Scrub or tap — the word gathers
@@ -52,7 +60,7 @@ export function HomeShow() {
               autoComplete="off"
               autoCapitalize="characters"
               spellCheck={false}
-              aria-label="Brand word"
+              aria-label="Your word"
             />
           </label>
         </ChapterFrame>
@@ -65,10 +73,35 @@ export function HomeShow() {
           index="02"
           kicker="Patience"
           title="A masterpiece, on their time."
-          body="Cotton dabs lift a painting from The Met as someone waits, focuses, or returns. The Pomodoro engine — built as a landing, a ritual, a first screen. Not a timer toy."
-          href={inquireHref(crafts[1]!)}
-          hrefLabel="Commission this"
+          body="Soft dabs lift a painting from The Met while someone waits, sits, or returns. A landing that rewards staying — not a clock."
+          href={inquireHref(reveal)}
+          hrefLabel="I want this"
           ink="void"
+        />
+      </section>
+
+      <section className="relative min-h-[100svh] overflow-hidden">
+        <SpectrumField word={word} />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-void/35 via-transparent to-transparent" />
+        <ChapterFrame
+          index="03"
+          kicker="Color"
+          title="Every color you own."
+          body="Move across the field. Rose, saffron, jade, indigo — the house finds a color and keeps it. This is how a brand feels, not how a palette is listed."
+          href={inquireHref(spectrum, { word })}
+          hrefLabel="I want this"
+        />
+      </section>
+
+      <section className="relative min-h-[100svh] overflow-hidden">
+        <SilkCloth />
+        <ChapterFrame
+          index="04"
+          kicker="Cloth"
+          title="Light, folded."
+          body="Shot silk. Evening rose, morning gold, deep teal. The cloth answers as they pass — a dress for the opening, not a flat wash of paint."
+          href={inquireHref(silk)}
+          hrefLabel="I want this"
         />
       </section>
 
@@ -76,12 +109,12 @@ export function HomeShow() {
         <StudyPreview slug="or" variant="knot" className="absolute inset-0" dpr={[1, 1.5]} />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void/80 via-void/15 to-void/50" />
         <ChapterFrame
-          index="03"
-          kicker="Threshold"
-          title="A door. Not a demo."
-          body="Live Three.js — gilt, grove, cloth, weather. The opening of an estate site. Photography you do not need."
-          href={inquireHref(crafts[2]!, { study: "or" })}
-          hrefLabel="Commission this"
+          index="05"
+          kicker="Doorway"
+          title="A door. Not a picture."
+          body="One object in the room, lit like jewelry. Grove, gilt, cloth, weather. Photography you do not need."
+          href={inquireHref(threshold, { study: "or" })}
+          hrefLabel="I want this"
           align="end"
         />
       </section>
@@ -89,20 +122,20 @@ export function HomeShow() {
       <section className="relative bg-void">
         <div className="grid min-h-[100svh] lg:grid-cols-2">
           <div className="relative flex min-h-[70svh] flex-col justify-end bg-void px-6 pb-16 pt-36 md:px-12">
-            <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">04 — Atmosphere</p>
+            <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">06 — Weather</p>
             <h2 className="display mt-5 max-w-md text-[clamp(2.2rem,5vw,3.8rem)] leading-[0.9] tracking-tight">
-              The site answers the hand.
+              The page feels the hand.
             </h2>
             <div className="mt-10 flex flex-1 items-center justify-center">
               <LivingCompass size={300} />
             </div>
             <p className="mono text-[11px] tracking-[0.28em] uppercase text-gold">Compass</p>
             <p className="mt-3 max-w-xs text-[14px] leading-relaxed text-ivory/50">
-              The needle follows the hand. Commissioned as weather — not a widget.
+              The needle follows. Weather, not a gadget.
             </p>
             <p className="mt-5">
-              <Link href={inquireHref(crafts[3]!)} className="link-gold">
-                Commission this
+              <Link href={inquireHref(atmosphere)} className="link-gold">
+                I want this
               </Link>
             </p>
           </div>
@@ -123,11 +156,12 @@ export function HomeShow() {
 
 export function HomeLedger() {
   return (
-    <section className="bg-void px-6 py-28 text-ivory md:px-12 md:py-36">
+    <section className="relative overflow-hidden bg-void px-6 py-28 text-ivory md:px-12 md:py-36">
+      <div className="spectrum-bar absolute inset-x-0 top-0" />
       <div className="mx-auto max-w-[1180px]">
-        <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">05 — What we install</p>
+        <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">07 — On your site</p>
         <h2 className="display mt-5 max-w-3xl text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.9] tracking-tight">
-          Effects you can commission. Not experiments you browse.
+          What we can put on your house.
         </h2>
         <ul className="mt-16 divide-y divide-ivory/10 border-y border-ivory/10">
           {crafts.map((craft) => (
@@ -138,7 +172,7 @@ export function HomeLedger() {
                 <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-ivory/55">{craft.line}</p>
               </div>
               <Link href={inquireHref(craft)} className="link-gold text-[15px]">
-                Use this
+                I want this
               </Link>
             </li>
           ))}

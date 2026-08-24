@@ -7,7 +7,7 @@ import { investmentBands, processSteps } from "@/lib/possibility";
 export const metadata: Metadata = {
   title: "Engage",
   description:
-    "How Imperium Adventures commissions websites — process, $5,000 to $50,000, and the engines we install on the first screen.",
+    "How a website commission with Imperium Adventures works — from first meeting to opening day, $5,000 to $50,000.",
 };
 
 type PageProps = {
@@ -21,8 +21,8 @@ export default async function EngagePage({ searchParams }: PageProps) {
   return (
     <LetterPage
       kicker="Engage"
-      title="How a commission runs."
-      lede="The band is about the first screen and the system underneath — not hours on a spreadsheet."
+      title="How we work together."
+      lede="The price is about the first thing guests see — and the house underneath. Not hours on a sheet."
     >
       <ol className="divide-y divide-ivory/10 border-y border-ivory/10">
         {processSteps.map((step, index) => (
@@ -38,9 +38,9 @@ export default async function EngagePage({ searchParams }: PageProps) {
       </ol>
 
       <div className="mt-28">
-        <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">Engines</p>
+        <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">On your site</p>
         <h2 className="display mt-4 text-[clamp(2.2rem,5vw,3.8rem)] leading-tight tracking-tight">
-          What we build into the site.
+          What we can put there.
         </h2>
         <ul className="mt-12 divide-y divide-ivory/10 border-y border-ivory/10">
           {crafts.map((craft) => (
@@ -54,7 +54,7 @@ export default async function EngagePage({ searchParams }: PageProps) {
                 <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-ivory/50">{craft.line}</p>
               </div>
               <Link href={inquireHref(craft)} className="link-gold text-[15px]">
-                Use this
+                I want this
               </Link>
             </li>
           ))}
@@ -62,7 +62,7 @@ export default async function EngagePage({ searchParams }: PageProps) {
       </div>
 
       <div className="mt-28">
-        <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">Investment</p>
+        <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">What it costs</p>
         <h2 className="display mt-4 text-[clamp(2.4rem,5vw,4rem)] leading-tight tracking-tight">
           Five to fifty thousand.
         </h2>
@@ -91,17 +91,17 @@ export default async function EngagePage({ searchParams }: PageProps) {
       </div>
 
       <div id="os" className="mt-28 max-w-xl">
-        <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">Optional · Estate</p>
+        <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">If you need more</p>
         <h2 className="display mt-4 text-[clamp(2.2rem,4vw,3.4rem)] leading-tight tracking-tight">
-          If the team needs a morning OS.
+          A morning book for the team.
         </h2>
         <p className="mt-6 text-[15px] leading-relaxed text-ivory/55">
-          We built Finti — a Sales OS on top of the CRM. It is a scoped add-on to an Estate
-          commission, not a second storefront.
+          We made Finti — the desk a sales house opens first. It belongs with an Estate
+          commission, not as a second shop window.
         </p>
         <p className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-[15px]">
           <Link href="/inquire?need=product&band=estate&craft=os" className="link-gold">
-            Include a Sales OS
+            Include the morning book
           </Link>
           <Link href="/crm" className="link-gold">
             See Finti

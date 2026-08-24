@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     template: "%s · Imperium Adventures",
   },
   description:
-    "Imperium Adventures designs brand-led websites and living first screens — particle identity, painting reveal, Three.js thresholds — from $5,000 to $50,000.",
+    "Imperium Adventures makes websites for houses that refuse to look ordinary — from $5,000 to $50,000.",
   openGraph: {
     title: "Imperium Adventures — Commissioned websites",
     description:
-      "Websites that refuse to look ordinary. Particle identity, painting reveal, and spatial thresholds — $5,000 to $50,000.",
+      "Websites that refuse to look ordinary. Living openings. Five to fifty thousand.",
     type: "website",
   },
 };

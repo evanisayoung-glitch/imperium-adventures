@@ -14,7 +14,8 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-ivory/10 bg-void/72 text-ivory backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-40 bg-void/72 text-ivory backdrop-blur-md">
+      <div className="spectrum-bar" />
       <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-6 py-4 md:px-12">
         <Link href="/" className="display text-[1.35rem] leading-none tracking-tight">
           Imperium

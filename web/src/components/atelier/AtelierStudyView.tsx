@@ -82,7 +82,7 @@ export function AtelierStudyView({ study }: { study: AtelierStudy }) {
             Use this in a build
           </Link>
           <p className="mono mt-3 text-center text-[10px] tracking-[0.14em] text-atelier-muted">
-            Private builds · Vercel · by appointment
+            Private work · by appointment
           </p>
         </div>
       </aside>

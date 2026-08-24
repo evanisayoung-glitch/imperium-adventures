@@ -33,7 +33,7 @@ export async function POST(request: Request) {
   }
 
   const need = isNeed(body.need) ? body.need : "site";
-  const needLabel = studioNeedOptions.find((item) => item.id === need)?.label ?? "A brand-led website";
+  const needLabel = studioNeedOptions.find((item) => item.id === need)?.label ?? "A website for my house";
   const band = getBand(body.band);
   const atmosphere = getAtmosphere(body.study);
   const craft = getCraft(body.craft);
@@ -54,9 +54,9 @@ export async function POST(request: Request) {
     `Company: ${body.company?.trim() || "—"}`,
     `Site: ${body.url?.trim() || "—"}`,
     `Need: ${needLabel}`,
-    `Engine: ${craft ? craft.name : "Not sure"}`,
+    `Opening: ${craft ? craft.name : "Not sure"}`,
     `Band: ${band ? `${band.price} — ${band.name}` : "Not sure yet"}`,
-    `Threshold: ${atmosphere ? `${atmosphere.title} (${atmosphere.job})` : "Not sure"}`,
+    `Doorway: ${atmosphere ? `${atmosphere.title} (${atmosphere.job})` : "Not sure"}`,
     `Brand word: ${word || "—"}`,
     "",
     body.note?.trim() || "(no note)",

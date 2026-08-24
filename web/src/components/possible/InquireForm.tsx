@@ -72,7 +72,7 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
         />
       </label>
       <label className="block space-y-2 text-[14px] text-ivory/50">
-        Site or references
+        A site you like, if you have one
         <input
           value={url}
           onChange={(event) => setUrl(event.target.value)}
@@ -99,7 +99,7 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
         </div>
       </fieldset>
       <label className="block space-y-2 text-[14px] text-ivory/50">
-        Engine for the first screen
+        What should guests see first?
         <select
           value={craft}
           onChange={(event) => setCraft(event.target.value)}
@@ -117,7 +117,7 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
         ) : null}
       </label>
       <label className="block space-y-2 text-[14px] text-ivory/50">
-        Budget band
+        What it should cost
         <select
           value={band}
           onChange={(event) => setBand(event.target.value)}
@@ -135,7 +135,7 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
         ) : null}
       </label>
       <label className="block space-y-2 text-[14px] text-ivory/50">
-        Threshold
+        The doorway
         <select
           value={study}
           onChange={(event) => setStudy(event.target.value)}
@@ -150,7 +150,7 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
         </select>
       </label>
       <label className="block space-y-2 text-[14px] text-ivory/50">
-        Brand word
+        Your word
         <input
           value={word}
           onChange={(event) => setWord(event.target.value.toUpperCase().slice(0, 8))}
@@ -172,7 +172,7 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
           {status === "sending" ? "Opening…" : "Send the brief"}
         </button>
         <p className="max-w-xs text-[13px] text-ivory/40">
-          Opens a composed message. No account. No calendar theater.
+          Opens a letter to us. No account. No booking page.
         </p>
       </div>
       {status === "error" ? <p className="text-[15px] text-gold">{error}</p> : null}

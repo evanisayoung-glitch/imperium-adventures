@@ -5,7 +5,7 @@ import { AtelierFrame } from "@/components/atelier/AtelierFrame";
 export const metadata: Metadata = {
   title: "Atelier",
   description:
-    "The Imperium Adventures cabinet — live Three.js studies finished like jewelry.",
+    "The Imperium Adventures cabinet — private studies finished like jewelry.",
 };
 
 export default function AtelierLayout({ children }: { children: ReactNode }) {

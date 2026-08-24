@@ -84,10 +84,10 @@ export function WordmarkLab({
       {compact ? null : (
         <div className="flex flex-wrap items-end gap-6">
           <Link href={`/inquire?word=${encodeURIComponent(word)}&need=first-screen`} className="link-quiet text-[16px]">
-            Commission this effect
+            I want this
           </Link>
           <p className="max-w-md text-[15px] text-muted">
-            Shipped on your domain as part of a brand-led build.
+            Placed on your own address, as part of the house.
           </p>
         </div>
       )}

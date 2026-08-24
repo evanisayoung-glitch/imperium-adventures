@@ -7,7 +7,7 @@ export function SiteFooter() {
         <div>
           <p className="display text-2xl tracking-tight">Imperium Adventures</p>
           <p className="mt-3 max-w-sm text-[14px] leading-relaxed text-ivory/45">
-            Commissioned websites. Living first screens. Five to fifty thousand.
+            Websites for houses that refuse to look ordinary. Five to fifty thousand.
           </p>
         </div>
         <nav className="flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-ivory/45">

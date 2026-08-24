@@ -1,4 +1,11 @@
-export type CraftId = "identity" | "reveal" | "threshold" | "atmosphere" | "os";
+export type CraftId =
+  | "identity"
+  | "reveal"
+  | "spectrum"
+  | "silk"
+  | "threshold"
+  | "atmosphere"
+  | "os";
 
 export type Craft = {
   id: CraftId;
@@ -13,40 +20,56 @@ export const crafts: Craft[] = [
   {
     id: "identity",
     index: "01",
-    name: "Particle identity",
-    line: "Your word exists only when a visitor earns it — gold dust, then a name.",
+    name: "Your name, earned",
+    line: "Gold dust. Guests have to work a little before your word appears.",
     band: "signature",
     need: "first-screen",
   },
   {
     id: "reveal",
     index: "02",
-    name: "Painting reveal",
-    line: "A Met masterpiece lifts through cotton dabs as they wait, focus, or return.",
+    name: "A painting that waits",
+    line: "A masterpiece from The Met lifts, slowly, while someone stays with you.",
+    band: "signature",
+    need: "first-screen",
+  },
+  {
+    id: "spectrum",
+    index: "03",
+    name: "Every color you own",
+    line: "A living rainbow. Move a hand and the house finds its color — rose, saffron, jade, indigo.",
+    band: "signature",
+    need: "first-screen",
+  },
+  {
+    id: "silk",
+    index: "04",
+    name: "Cloth of light",
+    line: "Shot silk that shifts as they pass — evening rose, morning gold, deep teal.",
     band: "signature",
     need: "first-screen",
   },
   {
     id: "threshold",
-    index: "03",
-    name: "Three.js threshold",
-    line: "A spatial door — gilt, grove, cloth, weather — not a stock render.",
+    index: "05",
+    name: "A living doorway",
+    line: "One object in the room, lit like jewelry. No stock photograph.",
     band: "estate",
     need: "first-screen",
   },
   {
     id: "atmosphere",
-    index: "04",
-    name: "Living atmosphere",
-    line: "Compass, mist, and type that answer the hand. Motion with weight.",
+    index: "06",
+    name: "Weather that answers",
+    line: "A compass that follows. Mist you can pull. The page feels the hand.",
     band: "signature",
     need: "first-screen",
   },
   {
     id: "os",
-    index: "05",
-    name: "Sales OS",
-    line: "When the site is not enough: the morning system your team opens first.",
+    index: "07",
+    name: "The morning book",
+    line: "When the website is not enough: the desk your people open first.",
     band: "estate",
     need: "product",
   },

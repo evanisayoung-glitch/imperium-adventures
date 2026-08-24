@@ -364,3 +364,49 @@ input[type="radio"] {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
+
+.spectrum-bar {
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #ff3b5c,
+    #ff7a3c,
+    #ffd12a,
+    #c9a227,
+    #7dce4a,
+    #14b8a6,
+    #3b82f6,
+    #7c3aed,
+    #db2777,
+    #ff3b5c
+  );
+}
+
+.silk-fold {
+  will-change: transform;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.spectrum-bloom {
+  will-change: left, top, background;
+}
+
+body.has-light-trail,
+body.has-light-trail a,
+body.has-light-trail button,
+body.has-light-trail label {
+  cursor: none;
+}
+
+body.has-light-trail input,
+body.has-light-trail textarea,
+body.has-light-trail select {
+  cursor: text;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .silk-fold,
+  .spectrum-bloom {
+    transition: none;
+  }
+}

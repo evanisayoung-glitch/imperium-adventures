@@ -5,7 +5,7 @@ export function HouseClose() {
   return (
     <section className="border-t border-ivory/10 bg-void px-6 py-28 text-ivory md:px-12 md:py-36">
       <div className="mx-auto max-w-[1180px]">
-        <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">06 — Investment</p>
+        <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">08 — What it costs</p>
         <h2 className="display mt-5 max-w-3xl text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.9] tracking-tight">
           Five to fifty thousand.
         </h2>
