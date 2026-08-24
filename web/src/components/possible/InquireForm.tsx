@@ -47,41 +47,41 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
   }
 
   return (
-    <form onSubmit={onSubmit} className="mt-12 max-w-2xl space-y-6">
-      <label className="block space-y-2 text-sm text-muted">
+    <form onSubmit={onSubmit} className="max-w-xl space-y-10">
+      <label className="block space-y-2 text-[15px] text-muted">
         Name
         <input
           required
           value={name}
           onChange={(event) => setName(event.target.value)}
-          className="min-h-11 w-full border border-forest/20 bg-transparent px-3 text-base text-ink outline-none focus:border-gold"
+          className="field-input text-[18px]"
           autoComplete="name"
         />
       </label>
-      <label className="block space-y-2 text-sm text-muted">
+      <label className="block space-y-2 text-[15px] text-muted">
         Company
         <input
           value={company}
           onChange={(event) => setCompany(event.target.value)}
-          className="min-h-11 w-full border border-forest/20 bg-transparent px-3 text-base text-ink outline-none focus:border-gold"
+          className="field-input text-[18px]"
           autoComplete="organization"
         />
       </label>
-      <label className="block space-y-2 text-sm text-muted">
+      <label className="block space-y-2 text-[15px] text-muted">
         Site or references
         <input
           value={url}
           onChange={(event) => setUrl(event.target.value)}
-          className="min-h-11 w-full border border-forest/20 bg-transparent px-3 text-base text-ink outline-none focus:border-gold"
+          className="field-input text-[18px]"
           autoComplete="url"
           inputMode="url"
         />
       </label>
-      <fieldset className="space-y-3">
-        <legend className="text-sm text-muted">What do you need?</legend>
-        <div className="flex flex-col gap-2">
+      <fieldset className="space-y-4">
+        <legend className="text-[15px] text-muted">What do you need?</legend>
+        <div className="flex flex-col gap-3">
           {studioNeedOptions.map((option) => (
-            <label key={option.id} className="flex min-h-11 items-center gap-3 text-sm text-ink">
+            <label key={option.id} className="flex min-h-11 items-center gap-3 text-[17px]">
               <input
                 type="radio"
                 name="need"
@@ -94,12 +94,12 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
           ))}
         </div>
       </fieldset>
-      <label className="block space-y-2 text-sm text-muted">
+      <label className="block space-y-2 text-[15px] text-muted">
         Budget band
         <select
           value={band}
           onChange={(event) => setBand(event.target.value)}
-          className="min-h-11 w-full border border-forest/20 bg-field px-3 text-base text-ink outline-none focus:border-gold"
+          className="field-input text-[18px]"
         >
           <option value="">Not sure yet</option>
           {investmentBands.map((item) => (
@@ -108,56 +108,50 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
             </option>
           ))}
         </select>
-        {selectedBand ? (
-          <span className="block text-xs text-muted">{selectedBand.summary}</span>
-        ) : null}
+        {selectedBand ? <span className="block text-[15px]">{selectedBand.summary}</span> : null}
       </label>
-      <label className="block space-y-2 text-sm text-muted">
-        Atmosphere that felt like you
+      <label className="block space-y-2 text-[15px] text-muted">
+        Atmosphere
         <select
           value={study}
           onChange={(event) => setStudy(event.target.value)}
-          className="min-h-11 w-full border border-forest/20 bg-field px-3 text-base text-ink outline-none focus:border-gold"
+          className="field-input text-[18px]"
         >
           <option value="">Not sure</option>
           {atmospheres.map((item) => (
             <option key={item.slug} value={item.slug}>
-              {item.title} — {item.job}
+              {item.title}
             </option>
           ))}
         </select>
       </label>
-      <label className="block space-y-2 text-sm text-muted">
+      <label className="block space-y-2 text-[15px] text-muted">
         Brand word
         <input
           value={word}
           onChange={(event) => setWord(event.target.value.toUpperCase().slice(0, 8))}
-          className="min-h-11 w-full border border-forest/20 bg-transparent px-3 text-base tracking-[0.18em] text-ink outline-none focus:border-gold"
+          className="field-input display text-[22px] tracking-wide"
           maxLength={8}
         />
       </label>
-      <label className="block space-y-2 text-sm text-muted">
+      <label className="block space-y-2 text-[15px] text-muted">
         Note
         <textarea
           value={note}
           onChange={(event) => setNote(event.target.value)}
           rows={5}
-          className="w-full border border-forest/20 bg-transparent px-3 py-3 text-base text-ink outline-none focus:border-gold"
+          className="field-input min-h-32 resize-y py-3 text-[18px]"
         />
       </label>
-      <div className="flex flex-wrap items-center gap-4 pt-2">
-        <button
-          type="submit"
-          disabled={status === "sending"}
-          className="inline-flex min-h-11 items-center bg-gold px-6 py-3 text-sm font-medium tracking-[0.12em] uppercase text-forest-deep transition hover:bg-gold-soft disabled:opacity-60"
-        >
-          {status === "sending" ? "Opening brief…" : "Send the brief"}
+      <div className="flex flex-wrap items-center gap-5 pt-2">
+        <button type="submit" disabled={status === "sending"} className="cta-ink text-[16px] disabled:opacity-60">
+          {status === "sending" ? "Opening…" : "Send the brief"}
         </button>
-        <p className="max-w-sm text-xs text-muted">
-          Opens a composed message to the studio. We reply with next steps — usually within a day.
+        <p className="max-w-xs text-[14px] text-muted">
+          Opens a composed message. No account. No calendar theater.
         </p>
       </div>
-      {status === "error" ? <p className="text-sm text-forest">{error}</p> : null}
+      {status === "error" ? <p className="text-[15px]">{error}</p> : null}
     </form>
   );
 }

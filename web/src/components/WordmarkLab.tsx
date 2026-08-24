@@ -36,9 +36,9 @@ export function WordmarkLab({
     const instance = createParticleWordmark(node, {
       text: word || "IMPERIUM",
       fontFamily: "var(--font-display), Georgia, 'Times New Roman', serif",
-      fontWeight: 600,
+      fontWeight: 500,
       colors: ["#C9A227", "#E0C35A", "#9A9588"],
-      opacity: 0.8,
+      opacity: 0.75,
       pauseWhenOffscreen: true,
     });
     field.current = instance;
@@ -57,29 +57,14 @@ export function WordmarkLab({
   }, [word, onWordChange]);
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-12">
       {compact ? null : (
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-4">
-            <p className="text-xs tracking-[0.24em] uppercase text-gold">How it works</p>
-            <ul className="space-y-3 text-sm leading-relaxed text-muted">
-              <li>
-                <span className="text-forest">Desktop — </span>
-                wiggle the cursor in one small spot. About a second of work crystallizes
-                the word; stop and it exhales apart. Hovering or traveling never forms it.
-              </li>
-              <li>
-                <span className="text-forest">Phone — </span>
-                one tap tugs the dots; a tap-mash holds the word only while you keep
-                tapping. A press-and-hold never forms it. Scrolling never parks it.
-              </li>
-              <li>
-                <span className="text-forest">On your site — </span>
-                one continuous field behind a single stage, your word, your type, your
-                palette. The real headline stays in the DOM.
-              </li>
-            </ul>
-          </div>
+        <div className="grid gap-12 lg:grid-cols-2">
+          <ul className="space-y-5 text-[16px] leading-relaxed text-muted">
+            <li>Desktop — scrub in one small place until the word gathers. Travel never forms it.</li>
+            <li>Phone — tap-mash. A hold does nothing. Scrolling never parks it.</li>
+            <li>On your site — your word, type, and palette, behind a single stage.</li>
+          </ul>
           <WordControls word={word} onChange={setWord} />
         </div>
       )}
@@ -88,25 +73,21 @@ export function WordmarkLab({
 
       <div
         ref={host}
-        className="relative min-h-[42vh] overflow-hidden border border-forest/15 sm:min-h-[48vh]"
+        className="relative min-h-[48vh] overflow-hidden bg-atelier-void sm:min-h-[56vh]"
         aria-label="Open field. Scrub or tap here to form the word."
       >
-        <p className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] px-5 py-4 text-sm text-muted">
-          Scrub here on desktop, or tap-mash on a phone — the word forms in this field.
+        <p className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] px-5 py-4 text-[14px] text-atelier-ivory/45">
+          Scrub or tap-mash — the word forms here.
         </p>
       </div>
 
       {compact ? null : (
-        <div className="flex flex-wrap items-center gap-3 border-t border-forest/15 pt-8">
-          <Link
-            href={`/inquire?word=${encodeURIComponent(word)}&need=first-screen`}
-            className="inline-flex min-h-11 items-center bg-gold px-6 py-3 text-sm font-medium tracking-[0.12em] uppercase text-forest-deep transition hover:bg-gold-soft active:bg-gold-soft"
-          >
+        <div className="flex flex-wrap items-end gap-6">
+          <Link href={`/inquire?word=${encodeURIComponent(word)}&need=first-screen`} className="link-quiet text-[16px]">
             Commission this effect
           </Link>
-          <p className="max-w-md text-sm text-muted">
-            Imperium ships the field on your site — your word, type, and colors — as part
-            of a brand-led build.
+          <p className="max-w-md text-[15px] text-muted">
+            Shipped on your domain as part of a brand-led build.
           </p>
         </div>
       )}
@@ -123,13 +104,13 @@ function WordControls({
 }) {
   return (
     <div className="space-y-4">
-      <label className="block space-y-2 text-sm text-muted">
-        Try a brand word
+      <label className="block space-y-2 text-[15px] text-muted">
+        A brand word
         <input
           value={word}
           onChange={(event) => onChange(normalizeWord(event.target.value))}
           maxLength={MAX_CHARS}
-          className="min-h-11 w-full border border-forest/20 bg-transparent px-3 py-2.5 font-medium tracking-[0.18em] text-forest outline-none transition focus:border-gold"
+          className="field-input display text-[28px] tracking-wide"
           autoComplete="off"
           autoCapitalize="characters"
           spellCheck={false}
@@ -137,16 +118,16 @@ function WordControls({
           aria-describedby="wordmark-limit"
         />
       </label>
-      <p id="wordmark-limit" className="text-xs text-muted">
-        Short words stay crisp — {word.length}/{MAX_CHARS} letters.
+      <p id="wordmark-limit" className="text-[13px] text-muted">
+        {word.length}/{MAX_CHARS}
       </p>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-x-5 gap-y-2 text-[15px]">
         {SAMPLES.map((sample) => (
           <button
             key={sample}
             type="button"
             onClick={() => onChange(sample)}
-            className="min-h-11 border border-forest/20 px-3 py-2 text-xs tracking-[0.14em] text-muted transition hover:border-gold hover:text-forest active:border-gold active:bg-field-warm active:text-forest"
+            className={`italic transition-opacity ${word === sample ? "opacity-100" : "opacity-40 hover:opacity-80"}`}
           >
             {sample}
           </button>

@@ -1,41 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { MaisonPage } from "@/components/MaisonPage";
 import { experiments } from "@/lib/experiments";
 
 export const metadata: Metadata = {
-  title: "Playground",
+  title: "Lab",
   description: "Interactive experiments and prototypes from Imperium Adventures.",
 };
 
 export default function PlaygroundIndexPage() {
   return (
-    <section className="bg-field px-5 pb-24 pt-28 sm:px-8">
-      <div className="mx-auto max-w-6xl">
-        <p className="text-xs tracking-[0.24em] uppercase text-gold">Lab</p>
-        <h1 className="display mt-3 text-5xl text-forest sm:text-6xl">Lab floor</h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
-          Private prototypes. The commission path lives on Yours, Engage, and Inquire — this floor is where
-          ideas are tested before they become client craft.
-        </p>
-        <ul className="mt-14 space-y-4">
-          {experiments.map((item) => (
-            <li key={item.slug}>
-              <Link
-                href={`/playground/${item.slug}`}
-                className="group flex flex-col gap-2 border border-forest/15 px-5 py-6 transition hover:border-gold/60 hover:bg-field-warm/40 sm:flex-row sm:items-center sm:justify-between"
-              >
-                <div>
-                  <p className="display text-2xl text-forest">{item.title}</p>
-                  <p className="mt-1 text-sm text-muted">{item.tagline}</p>
-                </div>
-                <span className="text-xs tracking-[0.18em] uppercase text-muted group-hover:text-gold">
-                  {item.status} →
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+    <MaisonPage
+      kicker="Lab"
+      title="Private floor."
+      lede="Prototypes stay here. The commission path is Yours, Engage, and Inquire."
+    >
+      <ul className="divide-y divide-ink/10 border-y border-ink/10">
+        {experiments.map((item) => (
+          <li key={item.slug}>
+            <Link href={`/playground/${item.slug}`} className="group flex flex-col gap-2 py-8 sm:flex-row sm:items-baseline sm:justify-between">
+              <div>
+                <p className="display text-3xl italic tracking-tight">{item.title}</p>
+                <p className="mt-2 text-[16px] text-muted">{item.tagline}</p>
+              </div>
+              <span className="link-quiet text-[15px]">Open</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </MaisonPage>
   );
 }

@@ -2,49 +2,34 @@ import Link from "next/link";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-forest/15 bg-forest-deep text-field">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:flex-row sm:items-end sm:justify-between sm:px-8">
+    <footer className="border-t border-ink/10 bg-field text-ink">
+      <div className="mx-auto flex max-w-[1400px] flex-col gap-10 px-6 py-14 md:flex-row md:items-end md:justify-between md:px-12">
         <div>
-          <p className="display text-lg tracking-[0.18em]">IMPERIUM ADVENTURES</p>
-          <p className="mt-2 max-w-md text-sm text-field/70">
-            Commissioned websites and living first screens for houses that refuse to look ordinary.
+          <p className="display text-2xl tracking-tight">Imperium Adventures</p>
+          <p className="mt-3 max-w-sm text-[15px] leading-relaxed text-muted">
+            Commissioned websites. Five to fifty thousand.
           </p>
         </div>
-        <div className="flex flex-col gap-1 text-sm text-field/75 sm:items-end">
-          <Link
-            href="/yours"
-            className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
-          >
-            See what’s possible
+        <nav className="flex flex-wrap gap-x-6 gap-y-2 text-[15px] text-muted">
+          <Link href="/yours" className="hover:text-ink">
+            Yours
           </Link>
-          <Link
-            href="/inquire"
-            className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
-          >
-            Begin a commission
+          <Link href="/inquire" className="hover:text-ink">
+            Inquire
           </Link>
-          <Link
-            href="/atelier"
-            className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
-          >
+          <Link href="/atelier" className="hover:text-ink">
             Atelier
           </Link>
-          <Link
-            href="/playground"
-            className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
-          >
+          <Link href="/playground" className="hover:text-ink">
             Lab
           </Link>
-          <Link
-            href="/crm"
-            className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
-          >
-            Custom CRM
+          <Link href="/crm" className="hover:text-ink">
+            Finti
           </Link>
-          <p className="text-xs text-field/50">
-            © {new Date().getFullYear()} Imperium Adventures LLC
-          </p>
-        </div>
+        </nav>
+        <p className="text-[13px] text-muted">
+          © {new Date().getFullYear()} Imperium Adventures LLC
+        </p>
       </div>
     </footer>
   );

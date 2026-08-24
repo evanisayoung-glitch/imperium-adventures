@@ -1,39 +1,28 @@
 import Link from "next/link";
-import { MountainBackdrop } from "./MountainBackdrop";
+import { StudyPreview } from "@/components/atelier/StudyPreview";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100svh] overflow-hidden text-field">
-      <MountainBackdrop calm />
-      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-16 pt-28 sm:px-8 sm:pb-24">
-        <p className="animate-rise display text-4xl leading-none tracking-[0.14em] text-gold-soft sm:text-6xl md:text-7xl">
-          IMPERIUM
-          <span className="mt-2 block text-2xl tracking-[0.28em] text-field sm:text-3xl">
-            ADVENTURES
-          </span>
+    <section className="min-h-[100svh] bg-atelier-void text-atelier-ivory lg:grid lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+      <div className="relative h-[52vh] lg:order-2 lg:h-auto lg:min-h-[100svh]">
+        <StudyPreview slug="or" variant="knot" className="absolute inset-0 h-full w-full" dpr={[1, 1.5]} />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-atelier-void/75 to-transparent" />
+      </div>
+      <div className="relative z-10 mx-auto flex w-full max-w-[40rem] flex-1 flex-col justify-end px-6 pb-14 pt-8 lg:max-w-none lg:justify-end lg:px-12 lg:pb-24 lg:pt-28">
+        <p className="display text-[clamp(3.6rem,11vw,8.5rem)] leading-[0.82] tracking-tight">
+          Imperium
         </p>
-        <div className="animate-rise-delay-1 rule-gold my-6 max-w-md" />
-        <h1 className="animate-rise-delay-1 max-w-xl text-xl leading-relaxed text-field/90 sm:text-2xl">
+        <h1 className="display mt-8 max-w-md text-[clamp(1.55rem,2.6vw,2.15rem)] italic leading-[1.2] text-atelier-ivory/88">
           Websites for houses that refuse to look ordinary.
         </h1>
-        <p className="animate-rise-delay-2 mt-4 max-w-lg text-sm leading-relaxed text-field/70 sm:text-base">
-          We design the first screen your client will remember — then the system underneath.
-          Commissions typically $5,000–$50,000.
+        <p className="mt-6 max-w-sm text-[16px] leading-relaxed text-atelier-ivory/50">
+          The first screen is the work. Commissions from $5,000 to $50,000.
         </p>
-        <div className="animate-rise-delay-3 mt-8 flex flex-wrap gap-3">
-          <Link
-            href="/yours"
-            className="inline-flex min-h-11 items-center bg-gold px-6 py-3 text-sm font-medium tracking-[0.12em] uppercase text-forest-deep transition hover:bg-gold-soft active:bg-gold-soft"
-          >
-            See what’s possible
+        <p className="mt-10 text-[16px]">
+          <Link href="/yours" className="link-quiet text-atelier-champagne">
+            See what is possible
           </Link>
-          <Link
-            href="/inquire"
-            className="inline-flex min-h-11 items-center border border-field/40 px-6 py-3 text-sm tracking-[0.12em] uppercase text-field transition hover:border-gold hover:text-gold-soft active:border-gold active:text-gold-soft"
-          >
-            Begin a commission
-          </Link>
-        </div>
+        </p>
       </div>
     </section>
   );

@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Cormorant_Garamond, IBM_Plex_Mono, Source_Sans_3 } from "next/font/google";
+import { Cormorant_Garamond, IBM_Plex_Mono, Newsreader } from "next/font/google";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["500", "600"],
+  style: ["normal", "italic"],
 });
 
-const body = Source_Sans_3({
+const body = Newsreader({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500"],
 });
 
 const mono = IBM_Plex_Mono({

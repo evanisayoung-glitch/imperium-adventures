@@ -13,11 +13,5 @@ type PageProps = {
 
 export default async function YoursPage({ searchParams }: PageProps) {
   const { study } = await searchParams;
-  return (
-    <section className="bg-field px-5 pb-24 pt-28 sm:px-8">
-      <div className="mx-auto max-w-6xl">
-        <YoursWalk key={study ?? "default"} initialStudy={study} />
-      </div>
-    </section>
-  );
+  return <YoursWalk key={study ?? "default"} initialStudy={study} />;
 }

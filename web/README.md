@@ -18,7 +18,7 @@ Vercel root directory should be `web`. Production and preview deploy from this a
 
 ## Structure
 
-- `/` — studio threshold, possibility frames, cabinet teaser, signature, outcomes, inquire
+- `/` — void hero with a live study, three offers, inquire close
 - `/yours` — type a brand word, pick a first-screen atmosphere, see what ships
 - `/engage` — process, $5k / $18k / $50k investment, CRM as an Estate add-on
 - `/inquire` — brief form (prefill `?study=` `?band=` `?word=` `?need=`)

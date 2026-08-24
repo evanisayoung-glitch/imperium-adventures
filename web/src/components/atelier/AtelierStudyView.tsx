@@ -77,7 +77,7 @@ export function AtelierStudyView({ study }: { study: AtelierStudy }) {
         <div className="border-t border-atelier-line px-6 py-6 sm:px-8">
           <Link
             href={`/inquire?study=${study.slug}&need=first-screen`}
-            className="inline-flex min-h-11 w-full items-center justify-center bg-atelier-ivory text-sm tracking-[0.16em] uppercase text-atelier-void transition hover:bg-atelier-champagne"
+            className="cta-ivory w-full justify-center text-[15px]"
           >
             Use this in a build
           </Link>

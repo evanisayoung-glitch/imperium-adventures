@@ -32,33 +32,28 @@ export default async function ExperimentPage({ params }: Props) {
   if (!experiment) notFound();
 
   return (
-    <section className="bg-field px-5 pb-24 pt-28 sm:px-8">
-      <div className="mx-auto max-w-6xl">
-        <Link
-          href="/playground"
-          className="text-xs tracking-[0.18em] uppercase text-muted transition hover:text-gold"
-        >
-          ← Playground
+    <section className="bg-field px-6 pb-32 pt-36 text-ink md:px-12">
+      <div className="mx-auto max-w-[1100px]">
+        <Link href="/playground" className="link-quiet text-[15px] text-muted">
+          Lab
         </Link>
-        <h1 className="display mt-6 text-5xl text-forest sm:text-6xl">{experiment.title}</h1>
-        <p className="mt-4 max-w-2xl text-base text-muted">{experiment.tagline}</p>
+        <h1 className="display mt-6 text-[clamp(3rem,7vw,5.5rem)] italic leading-[0.92] tracking-tight">
+          {experiment.title}
+        </h1>
+        <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted">{experiment.tagline}</p>
 
-        <div className="mt-12">
+        <div className="mt-16">
           {slug === "wordmark" && <WordmarkLab />}
           {slug === "compass" && (
-            <div className="flex flex-col items-center gap-8 border border-forest/15 px-6 py-12 sm:py-16">
+            <div className="flex flex-col items-center gap-8 py-10">
               <LivingCompass size={280} />
-              <p className="max-w-md text-center text-sm text-muted">
-                Press and drag on the compass with your finger, or move your pointer on desktop — the needle follows with soft magnetic ease.
+              <p className="max-w-md text-center text-[15px] text-muted">
+                Drag the needle. It follows with magnetic ease.
               </p>
             </div>
           )}
           {slug === "mist" && <MistCanvas />}
-          {slug === "typeforge" && (
-            <div className="border border-forest/15 px-5 py-10 sm:px-8">
-              <Typeforge />
-            </div>
-          )}
+          {slug === "typeforge" && <Typeforge />}
           {slug === "pomodoro" && <PomodoroTimer />}
         </div>
       </div>

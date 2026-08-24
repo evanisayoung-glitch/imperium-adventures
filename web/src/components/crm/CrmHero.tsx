@@ -1,45 +1,28 @@
 import Link from "next/link";
-import { MountainBackdrop } from "@/components/MountainBackdrop";
 import { CrmCommandPreview } from "@/components/crm/CrmCommandPreview";
 
 export function CrmHero() {
   return (
-    <section className="relative min-h-[100svh] overflow-hidden text-field">
-      <MountainBackdrop />
-      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20">
-        <div className="grid items-end gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+    <section className="relative min-h-[100svh] overflow-hidden bg-forest-deep text-field">
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1400px] flex-col justify-end px-6 pb-16 pt-28 md:px-12 md:pb-24">
+        <div className="grid items-end gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <p className="animate-rise display text-4xl leading-none tracking-[0.14em] text-gold-soft sm:text-6xl md:text-7xl">
-              IMPERIUM
-              <span className="mt-2 block text-2xl tracking-[0.28em] text-field sm:text-3xl">
-                ADVENTURES
-              </span>
-            </p>
-            <div className="animate-rise-delay-1 rule-gold my-6 max-w-md" />
-            <h1 className="animate-rise-delay-1 max-w-xl text-xl leading-relaxed text-field/90 sm:text-2xl">
-              Custom CRM builds that tell your team what to do next.
+            <h1 className="display text-[clamp(2.8rem,6vw,5.5rem)] italic leading-[0.92] tracking-tight">
+              A sales OS that tells the team what to do next.
             </h1>
-            <p className="animate-rise-delay-2 mt-4 max-w-lg text-sm leading-relaxed text-field/70 sm:text-base">
-              Purpose-built sales operating systems — not another generic contact database.
+            <p className="mt-8 max-w-md text-[16px] leading-relaxed text-field/60">
+              Purpose-built operating systems — not another contact database. An Estate add-on,
+              when the site is not enough.
             </p>
-            <div className="animate-rise-delay-3 mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/inquire?need=product&band=estate"
-                className="inline-flex min-h-11 items-center bg-gold px-6 py-3 text-sm font-medium tracking-[0.12em] uppercase text-forest-deep transition hover:bg-gold-soft"
-              >
+            <p className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-[16px]">
+              <Link href="/inquire?need=product&band=estate" className="link-quiet text-gold-soft">
                 Start a CRM build
               </Link>
-              <Link
-                href="#finti"
-                className="border border-field/40 px-6 py-3 text-sm tracking-[0.12em] uppercase text-field transition hover:border-gold hover:text-gold-soft"
-              >
-                See Finti features
+              <Link href="#finti" className="link-quiet text-field/70">
+                See Finti
               </Link>
-            </div>
-            <nav
-              aria-label="CRM pillars"
-              className="animate-rise-delay-3 mt-8 flex flex-wrap gap-x-5 gap-y-2 text-[11px] tracking-[0.18em] uppercase text-field/55"
-            >
+            </p>
+            <nav aria-label="CRM pillars" className="mt-8 flex flex-wrap gap-x-6 text-[15px] text-field/45">
               {(
                 [
                   ["find", "Find"],
@@ -48,17 +31,13 @@ export function CrmHero() {
                   ["win", "Win"],
                 ] as const
               ).map(([slug, label]) => (
-                <Link
-                  key={slug}
-                  href={`/crm/${slug}`}
-                  className="transition hover:text-gold-soft"
-                >
+                <Link key={slug} href={`/crm/${slug}`} className="hover:text-field">
                   {label}
                 </Link>
               ))}
             </nav>
           </div>
-          <div className="animate-rise-delay-2 hidden justify-self-end lg:block">
+          <div className="hidden justify-self-end lg:block">
             <CrmCommandPreview />
           </div>
         </div>

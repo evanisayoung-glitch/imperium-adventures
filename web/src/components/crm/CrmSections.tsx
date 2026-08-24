@@ -200,17 +200,11 @@ export function CrmOffer() {
               Next.js + modern backends, ready for multi-user scale
             </li>
           </ul>
-          <div className="mt-12 flex flex-wrap gap-3">
-            <Link
-              href="/inquire?need=product&band=estate"
-              className="inline-flex min-h-11 items-center bg-gold px-6 py-3 text-sm font-medium tracking-[0.12em] uppercase text-forest-deep transition hover:bg-gold-soft"
-            >
+          <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[16px]">
+            <Link href="/inquire?need=product&band=estate" className="link-quiet text-gold-soft">
               Talk about your CRM
             </Link>
-            <Link
-              href="/inquire"
-              className="inline-flex min-h-11 items-center border border-field/35 px-6 py-3 text-sm tracking-[0.12em] uppercase text-field transition hover:border-gold hover:text-gold-soft"
-            >
+            <Link href="/inquire" className="link-quiet text-field/70">
               Website commission
             </Link>
           </div>
