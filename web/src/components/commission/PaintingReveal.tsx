@@ -169,9 +169,9 @@ export function PaintingReveal({
   };
 
   return (
-    <div ref={hostRef} className={`relative overflow-hidden bg-paper ${className ?? ""}`}>
-      <canvas ref={paintingRef} className="absolute inset-0 h-full w-full" />
-      <canvas ref={coverRef} className="absolute inset-0 h-full w-full" />
+    <div ref={hostRef} className={`absolute inset-0 overflow-hidden bg-paper ${className ?? ""}`}>
+      <canvas ref={paintingRef} className="absolute inset-0" />
+      <canvas ref={coverRef} className="absolute inset-0" />
       {!imageReady ? (
         <div className="absolute inset-0 flex items-center justify-center bg-paper">
           <p className="mono text-[11px] tracking-[0.28em] uppercase text-ink/40">Preparing the canvas</p>

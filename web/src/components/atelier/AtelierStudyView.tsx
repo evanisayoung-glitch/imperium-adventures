@@ -18,7 +18,7 @@ export function AtelierStudyView({ study }: { study: AtelierStudy }) {
           slug={study.slug}
           variant={variant}
           paused={paused}
-          className="absolute inset-0 h-full w-full"
+          className="absolute inset-0"
           dpr={[1, 1.6]}
         />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-atelier-void/70 to-transparent" />

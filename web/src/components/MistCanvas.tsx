@@ -149,8 +149,9 @@ export function MistCanvas({
   return (
     <div
       ref={surfaceRef}
-      className={`interactive-surface relative overflow-hidden bg-[#0f2a1f] ${
-        className ?? "h-[420px] rounded-sm border border-forest/15 sm:h-[520px]"
+      className={`interactive-surface overflow-hidden bg-[#0f2a1f] ${
+        className ??
+        "relative h-[420px] rounded-sm border border-forest/15 sm:h-[520px]"
       }`}
       style={{
         touchAction: "none",

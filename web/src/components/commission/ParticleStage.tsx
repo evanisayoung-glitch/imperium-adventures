@@ -41,7 +41,7 @@ export function ParticleStage({
   return (
     <div
       ref={host}
-      className={`relative overflow-hidden bg-void ${className ?? ""}`}
+      className={`absolute inset-0 overflow-hidden bg-void ${className ?? ""}`}
       aria-label="Open field. Scrub or tap here to form the word."
     />
   );

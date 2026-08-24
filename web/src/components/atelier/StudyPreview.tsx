@@ -45,7 +45,7 @@ export function StudyPreview({
   }, []);
 
   return (
-    <div ref={host} className={`relative overflow-hidden bg-atelier-void ${className ?? ""}`}>
+    <div ref={host} className={`overflow-hidden bg-atelier-void ${className ?? "relative"}`}>
       {visible ? (
         <StudioCanvas
           dpr={dpr ?? 1.1}

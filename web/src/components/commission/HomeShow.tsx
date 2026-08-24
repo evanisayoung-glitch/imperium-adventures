@@ -27,7 +27,7 @@ export function HomeShow() {
   return (
     <div className="bg-void text-ivory">
       <section className="relative min-h-[100svh] overflow-hidden">
-        <ParticleStage word={word} className="absolute inset-0 h-full w-full" />
+        <ParticleStage word={word} className="absolute inset-0" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-void/55 via-transparent to-void/75" />
         <ChapterFrame
           index="01"
@@ -59,8 +59,8 @@ export function HomeShow() {
       </section>
 
       <section className="relative min-h-[100svh] overflow-hidden bg-paper text-void">
-        <PaintingReveal className="absolute inset-0 h-full w-full" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-paper/88 via-paper/20 to-transparent md:via-paper/10" />
+        <PaintingReveal className="absolute inset-0" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-paper/55 via-transparent to-transparent" />
         <ChapterFrame
           index="02"
           kicker="Patience"
@@ -73,7 +73,7 @@ export function HomeShow() {
       </section>
 
       <section className="relative min-h-[100svh] overflow-hidden">
-        <StudyPreview slug="or" variant="knot" className="absolute inset-0 h-full w-full" dpr={[1, 1.5]} />
+        <StudyPreview slug="or" variant="knot" className="absolute inset-0" dpr={[1, 1.5]} />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void/80 via-void/15 to-void/50" />
         <ChapterFrame
           index="03"
@@ -86,35 +86,31 @@ export function HomeShow() {
         />
       </section>
 
-      <section className="bg-void">
-        <div className="px-6 pb-10 pt-28 md:px-12">
-          <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">04 — Atmosphere</p>
-          <h2 className="display mt-5 max-w-2xl text-[clamp(2.4rem,6vw,4.4rem)] leading-[0.9] tracking-tight">
-            The site answers the hand.
-          </h2>
-          <p className="mt-5 max-w-md text-[15px] leading-relaxed text-ivory/55">
-            Compass, mist, and motion with weight. Installed as weather on a client site — not
-            widgets in a lab.
-          </p>
-          <p className="mt-6">
-            <Link href={inquireHref(crafts[3]!)} className="link-gold">
-              Commission this
-            </Link>
-          </p>
-        </div>
-        <div className="grid min-h-[70svh] lg:grid-cols-2">
-          <div className="relative flex min-h-[70svh] flex-col items-center justify-center bg-void px-6 py-24">
-            <LivingCompass size={320} />
-            <p className="mono mt-10 text-[11px] tracking-[0.28em] uppercase text-gold">Compass</p>
-            <p className="mt-3 max-w-xs text-center text-[14px] leading-relaxed text-ivory/50">
-              The needle follows the hand with magnetic ease.
+      <section className="relative bg-void">
+        <div className="grid min-h-[100svh] lg:grid-cols-2">
+          <div className="relative flex min-h-[70svh] flex-col justify-end bg-void px-6 pb-16 pt-36 md:px-12">
+            <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">04 — Atmosphere</p>
+            <h2 className="display mt-5 max-w-md text-[clamp(2.2rem,5vw,3.8rem)] leading-[0.9] tracking-tight">
+              The site answers the hand.
+            </h2>
+            <div className="mt-10 flex flex-1 items-center justify-center">
+              <LivingCompass size={300} />
+            </div>
+            <p className="mono text-[11px] tracking-[0.28em] uppercase text-gold">Compass</p>
+            <p className="mt-3 max-w-xs text-[14px] leading-relaxed text-ivory/50">
+              The needle follows the hand. Commissioned as weather — not a widget.
+            </p>
+            <p className="mt-5">
+              <Link href={inquireHref(crafts[3]!)} className="link-gold">
+                Commission this
+              </Link>
             </p>
           </div>
           <div className="relative min-h-[70svh]">
-            <MistCanvas className="absolute inset-0 h-full w-full border-0" hideCaption />
-            <div className="absolute inset-x-0 bottom-0 z-[2] px-6 pb-8 md:px-10">
+            <MistCanvas className="absolute inset-0 border-0" hideCaption />
+            <div className="absolute inset-x-0 bottom-0 z-[2] px-6 pb-16 md:px-12">
               <p className="mono text-[11px] tracking-[0.28em] uppercase text-gold">Mist</p>
-              <p className="mt-3 max-w-xs text-[14px] leading-relaxed text-ivory/70">
+              <p className="mt-3 max-w-xs text-[14px] leading-relaxed text-ivory/75">
                 Drag. Mountains stay. Only the weather moves.
               </p>
             </div>

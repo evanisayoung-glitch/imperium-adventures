@@ -33,7 +33,7 @@ export function YoursComposer({ initialStudy }: { initialStudy?: string }) {
   return (
     <div className="bg-void text-ivory">
       <section className="relative min-h-[100svh] overflow-hidden">
-        <ParticleStage word={word} className="absolute inset-0 h-full w-full" />
+        <ParticleStage word={word} className="absolute inset-0" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-void/50 via-transparent to-void/80" />
         <ChapterFrame
           index="01"
@@ -59,8 +59,8 @@ export function YoursComposer({ initialStudy }: { initialStudy?: string }) {
       </section>
 
       <section className="relative min-h-[100svh] overflow-hidden bg-paper text-void">
-        <PaintingReveal className="absolute inset-0 h-full w-full" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-paper/90 via-paper/25 to-transparent" />
+        <PaintingReveal className="absolute inset-0" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-paper/55 via-transparent to-transparent" />
         <ChapterFrame
           index="02"
           kicker="Reveal"
@@ -76,7 +76,7 @@ export function YoursComposer({ initialStudy }: { initialStudy?: string }) {
         <StudyPreview
           slug={selected.slug}
           variant={selected.variant}
-          className="absolute inset-0 h-full w-full"
+          className="absolute inset-0"
           dpr={[1, 1.5]}
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void/82 via-void/20 to-void/45" />
