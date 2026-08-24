@@ -11,10 +11,11 @@ export default function PlaygroundIndexPage() {
   return (
     <section className="bg-field px-5 pb-24 pt-28 sm:px-8">
       <div className="mx-auto max-w-6xl">
-        <p className="text-xs tracking-[0.24em] uppercase text-gold">Playground</p>
+        <p className="text-xs tracking-[0.24em] uppercase text-gold">Lab</p>
         <h1 className="display mt-3 text-5xl text-forest sm:text-6xl">Lab floor</h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
-          Interactive prototypes you can try right now. New ideas land here before they become client features.
+          Private prototypes. The commission path lives on Yours, Engage, and Inquire — this floor is where
+          ideas are tested before they become client craft.
         </p>
         <ul className="mt-14 space-y-4">
           {experiments.map((item) => (

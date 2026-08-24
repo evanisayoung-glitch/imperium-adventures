@@ -23,12 +23,12 @@ export function CrmHero() {
               Purpose-built sales operating systems — not another generic contact database.
             </p>
             <div className="animate-rise-delay-3 mt-8 flex flex-wrap gap-3">
-              <a
-                href="mailto:Imperiumadventures99@gmail.com?subject=Custom%20CRM%20build%20inquiry"
-                className="bg-gold px-6 py-3 text-sm font-medium tracking-[0.12em] uppercase text-forest-deep transition hover:bg-gold-soft"
+              <Link
+                href="/inquire?need=product&band=estate"
+                className="inline-flex min-h-11 items-center bg-gold px-6 py-3 text-sm font-medium tracking-[0.12em] uppercase text-forest-deep transition hover:bg-gold-soft"
               >
                 Start a CRM build
-              </a>
+              </Link>
               <Link
                 href="#finti"
                 className="border border-field/40 px-6 py-3 text-sm tracking-[0.12em] uppercase text-field transition hover:border-gold hover:text-gold-soft"

@@ -207,7 +207,12 @@ body {
   .gold-pulse,
   .mist-layer,
   .bar-fill,
-  .score-ring {
+  .score-ring,
+  .animate-rise,
+  .animate-rise-delay-1,
+  .animate-rise-delay-2,
+  .animate-rise-delay-3,
+  .pipeline-glide {
     animation: none !important;
     transition: none !important;
   }

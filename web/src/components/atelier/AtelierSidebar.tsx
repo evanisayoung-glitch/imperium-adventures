@@ -65,7 +65,7 @@ export function AtelierSidebar({ onNavigate }: { onNavigate?: () => void }) {
         <SidebarLink href="/playground" onClick={onNavigate}>
           Playground
         </SidebarLink>
-        <SidebarLink href="/#hire" onClick={onNavigate}>
+        <SidebarLink href="/inquire" onClick={onNavigate}>
           Commission
         </SidebarLink>
       </nav>

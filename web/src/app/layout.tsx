@@ -23,15 +23,15 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Imperium Adventures — Playground & Studio",
+    default: "Imperium Adventures — Commissioned websites",
     template: "%s · Imperium Adventures",
   },
   description:
-    "Imperium Adventures LLC playground for new web features — and a showcase for client website work.",
+    "Imperium Adventures designs brand-led websites and living first screens for $5,000–$50,000. See what is possible for your site.",
   openGraph: {
-    title: "Imperium Adventures — Playground & Studio",
+    title: "Imperium Adventures — Commissioned websites",
     description:
-      "A living studio for experiments, prototypes, and client-ready web craft.",
+      "Websites for houses that refuse to look ordinary — from a $5,000 presence to a $50,000 estate.",
     type: "website",
   },
 };

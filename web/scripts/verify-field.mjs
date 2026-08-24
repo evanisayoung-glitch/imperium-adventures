@@ -22,7 +22,7 @@
 
 import { chromium, devices } from 'playwright';
 
-const URL = process.argv[2] || 'http://localhost:3000';
+const URL = process.argv[2] || 'http://localhost:3000/playground/wordmark';
 const EXE = process.argv[3]; // optional chromium path
 
 // If the site opens with a full-screen intro (curtain, splash), do whatever

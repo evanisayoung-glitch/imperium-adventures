@@ -1,16 +1,18 @@
 import { AtelierTeaser } from "@/components/AtelierTeaser";
-import { CraftSection } from "@/components/CraftSection";
 import { Hero } from "@/components/Hero";
 import { HireSection } from "@/components/HireSection";
-import { PlaygroundSection } from "@/components/PlaygroundSection";
+import { OutcomesSection } from "@/components/OutcomesSection";
+import { PossibilityFrames } from "@/components/PossibilityFrames";
+import { SignatureTeaser } from "@/components/SignatureTeaser";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <PossibilityFrames />
       <AtelierTeaser />
-      <PlaygroundSection />
-      <CraftSection />
+      <SignatureTeaser />
+      <OutcomesSection />
       <HireSection />
     </>
   );

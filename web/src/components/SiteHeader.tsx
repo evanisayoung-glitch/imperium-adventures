@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const links = [
+  { href: "/yours", label: "Yours" },
   { href: "/atelier", label: "Atelier" },
-  { href: "/crm", label: "CRM" },
-  { href: "/#playground", label: "Playground" },
-  { href: "/#hire", label: "Hire" },
+  { href: "/engage", label: "Engage" },
+  { href: "/inquire", label: "Inquire" },
 ];
 
 export function SiteHeader() {

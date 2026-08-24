@@ -1,9 +1,11 @@
 export function MountainBackdrop({
   className = "",
   interactive = false,
+  calm = false,
 }: {
   className?: string;
   interactive?: boolean;
+  calm?: boolean;
 }) {
   return (
     <div
@@ -27,7 +29,7 @@ export function MountainBackdrop({
             <stop offset="100%" stopColor="#1b4332" stopOpacity="0.2" />
           </linearGradient>
         </defs>
-        <g className="mist-layer opacity-40">
+        <g className={calm ? "opacity-40" : "mist-layer opacity-40"}>
           <ellipse cx="280" cy="250" rx="220" ry="48" fill="#f7f4ec" opacity="0.18" />
           <ellipse cx="980" cy="210" rx="280" ry="56" fill="#f7f4ec" opacity="0.14" />
         </g>
@@ -43,7 +45,7 @@ export function MountainBackdrop({
           d="M700 250 L724 292 L700 284 L676 298 Z"
           fill="#f7f4ec"
           opacity="0.85"
-          className="gold-pulse"
+          className={calm ? undefined : "gold-pulse"}
         />
         <g fill="#0f2a1f" opacity="0.9">
           <path d="M180 580 L210 510 L240 580 Z" />

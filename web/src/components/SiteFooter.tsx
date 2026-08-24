@@ -7,10 +7,22 @@ export function SiteFooter() {
         <div>
           <p className="display text-lg tracking-[0.18em]">IMPERIUM ADVENTURES</p>
           <p className="mt-2 max-w-md text-sm text-field/70">
-            A living studio for experiments, prototypes, and client-ready web craft.
+            Commissioned websites and living first screens for houses that refuse to look ordinary.
           </p>
         </div>
         <div className="flex flex-col gap-1 text-sm text-field/75 sm:items-end">
+          <Link
+            href="/yours"
+            className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
+          >
+            See what’s possible
+          </Link>
+          <Link
+            href="/inquire"
+            className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
+          >
+            Begin a commission
+          </Link>
           <Link
             href="/atelier"
             className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
@@ -18,29 +30,17 @@ export function SiteFooter() {
             Atelier
           </Link>
           <Link
-            href="/playground/wordmark"
+            href="/playground"
             className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
           >
-            Particle wordmark
+            Lab
           </Link>
           <Link
             href="/crm"
             className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
           >
-            Custom CRM builds
+            Custom CRM
           </Link>
-          <Link
-            href="/playground"
-            className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
-          >
-            Open playground
-          </Link>
-          <a
-            href="mailto:Imperiumadventures99@gmail.com?subject=Website%20project%20inquiry"
-            className="inline-flex min-h-11 items-center break-all transition-colors hover:text-gold-soft active:text-gold-soft"
-          >
-            Imperiumadventures99@gmail.com
-          </a>
           <p className="text-xs text-field/50">
             © {new Date().getFullYear()} Imperium Adventures LLC
           </p>
