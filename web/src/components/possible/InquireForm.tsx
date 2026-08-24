@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState, type FormEvent } from "react";
+import { crafts, getCraft } from "@/lib/crafts";
 import { atmospheres, getBand, investmentBands } from "@/lib/possibility";
 import { studioNeedOptions } from "@/lib/studio";
 
@@ -9,6 +10,7 @@ export type InquirePrefill = {
   band?: string;
   word?: string;
   need?: string;
+  craft?: string;
 };
 
 export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
@@ -18,12 +20,14 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
   const [need, setNeed] = useState(prefill.need ?? "site");
   const [band, setBand] = useState(prefill.band ?? "");
   const [study, setStudy] = useState(prefill.study ?? "");
+  const [craft, setCraft] = useState(prefill.craft ?? "");
   const [word, setWord] = useState(prefill.word ?? "");
   const [note, setNote] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
   const [error, setError] = useState("");
 
   const selectedBand = useMemo(() => getBand(band), [band]);
+  const selectedCraft = useMemo(() => getCraft(craft), [craft]);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -33,7 +37,7 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
       const response = await fetch("/api/inquire", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, company, url, need, band, study, word, note }),
+        body: JSON.stringify({ name, company, url, need, band, study, craft, word, note }),
       });
       const payload = (await response.json()) as { mailto?: string; error?: string };
       if (!response.ok || !payload.mailto) {
@@ -48,40 +52,40 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
 
   return (
     <form onSubmit={onSubmit} className="max-w-xl space-y-10">
-      <label className="block space-y-2 text-[15px] text-muted">
+      <label className="block space-y-2 text-[14px] text-ivory/50">
         Name
         <input
           required
           value={name}
           onChange={(event) => setName(event.target.value)}
-          className="field-input text-[18px]"
+          className="field-input text-[17px]"
           autoComplete="name"
         />
       </label>
-      <label className="block space-y-2 text-[15px] text-muted">
+      <label className="block space-y-2 text-[14px] text-ivory/50">
         Company
         <input
           value={company}
           onChange={(event) => setCompany(event.target.value)}
-          className="field-input text-[18px]"
+          className="field-input text-[17px]"
           autoComplete="organization"
         />
       </label>
-      <label className="block space-y-2 text-[15px] text-muted">
+      <label className="block space-y-2 text-[14px] text-ivory/50">
         Site or references
         <input
           value={url}
           onChange={(event) => setUrl(event.target.value)}
-          className="field-input text-[18px]"
+          className="field-input text-[17px]"
           autoComplete="url"
           inputMode="url"
         />
       </label>
       <fieldset className="space-y-4">
-        <legend className="text-[15px] text-muted">What do you need?</legend>
+        <legend className="text-[14px] text-ivory/50">What do you need?</legend>
         <div className="flex flex-col gap-3">
           {studioNeedOptions.map((option) => (
-            <label key={option.id} className="flex min-h-11 items-center gap-3 text-[17px]">
+            <label key={option.id} className="flex min-h-11 items-center gap-3 text-[16px]">
               <input
                 type="radio"
                 name="need"
@@ -94,12 +98,30 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
           ))}
         </div>
       </fieldset>
-      <label className="block space-y-2 text-[15px] text-muted">
+      <label className="block space-y-2 text-[14px] text-ivory/50">
+        Engine for the first screen
+        <select
+          value={craft}
+          onChange={(event) => setCraft(event.target.value)}
+          className="field-input text-[17px]"
+        >
+          <option value="">Not sure yet</option>
+          {crafts.map((item) => (
+            <option key={item.id} value={item.id}>
+              {item.name}
+            </option>
+          ))}
+        </select>
+        {selectedCraft ? (
+          <span className="block text-[14px] text-ivory/55">{selectedCraft.line}</span>
+        ) : null}
+      </label>
+      <label className="block space-y-2 text-[14px] text-ivory/50">
         Budget band
         <select
           value={band}
           onChange={(event) => setBand(event.target.value)}
-          className="field-input text-[18px]"
+          className="field-input text-[17px]"
         >
           <option value="">Not sure yet</option>
           {investmentBands.map((item) => (
@@ -108,14 +130,16 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
             </option>
           ))}
         </select>
-        {selectedBand ? <span className="block text-[15px]">{selectedBand.summary}</span> : null}
+        {selectedBand ? (
+          <span className="block text-[14px] text-ivory/55">{selectedBand.summary}</span>
+        ) : null}
       </label>
-      <label className="block space-y-2 text-[15px] text-muted">
-        Atmosphere
+      <label className="block space-y-2 text-[14px] text-ivory/50">
+        Threshold
         <select
           value={study}
           onChange={(event) => setStudy(event.target.value)}
-          className="field-input text-[18px]"
+          className="field-input text-[17px]"
         >
           <option value="">Not sure</option>
           {atmospheres.map((item) => (
@@ -125,7 +149,7 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
           ))}
         </select>
       </label>
-      <label className="block space-y-2 text-[15px] text-muted">
+      <label className="block space-y-2 text-[14px] text-ivory/50">
         Brand word
         <input
           value={word}
@@ -134,24 +158,24 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
           maxLength={8}
         />
       </label>
-      <label className="block space-y-2 text-[15px] text-muted">
+      <label className="block space-y-2 text-[14px] text-ivory/50">
         Note
         <textarea
           value={note}
           onChange={(event) => setNote(event.target.value)}
           rows={5}
-          className="field-input min-h-32 resize-y py-3 text-[18px]"
+          className="field-input min-h-32 resize-y py-3 text-[17px]"
         />
       </label>
       <div className="flex flex-wrap items-center gap-5 pt-2">
-        <button type="submit" disabled={status === "sending"} className="cta-ink text-[16px] disabled:opacity-60">
+        <button type="submit" disabled={status === "sending"} className="cta-ink text-[15px] disabled:opacity-60">
           {status === "sending" ? "Opening…" : "Send the brief"}
         </button>
-        <p className="max-w-xs text-[14px] text-muted">
+        <p className="max-w-xs text-[13px] text-ivory/40">
           Opens a composed message. No account. No calendar theater.
         </p>
       </div>
-      {status === "error" ? <p className="text-[15px]">{error}</p> : null}
+      {status === "error" ? <p className="text-[15px] text-gold">{error}</p> : null}
     </form>
   );
 }

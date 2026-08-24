@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getCraft } from "@/lib/crafts";
 import { getAtmosphere, getBand } from "@/lib/possibility";
 import { STUDIO_EMAIL, studioNeedOptions, type StudioNeed } from "@/lib/studio";
 
@@ -9,6 +10,7 @@ type Body = {
   need?: string;
   band?: string;
   study?: string;
+  craft?: string;
   word?: string;
   note?: string;
 };
@@ -34,10 +36,12 @@ export async function POST(request: Request) {
   const needLabel = studioNeedOptions.find((item) => item.id === need)?.label ?? "A brand-led website";
   const band = getBand(body.band);
   const atmosphere = getAtmosphere(body.study);
+  const craft = getCraft(body.craft);
   const word = body.word?.trim().toUpperCase() ?? "";
 
   const subject = [
     "Commission inquiry",
+    craft ? `— ${craft.name}` : "",
     atmosphere ? `— ${atmosphere.title}` : "",
     band ? `— ${band.name}` : "",
   ]
@@ -50,8 +54,9 @@ export async function POST(request: Request) {
     `Company: ${body.company?.trim() || "—"}`,
     `Site: ${body.url?.trim() || "—"}`,
     `Need: ${needLabel}`,
+    `Engine: ${craft ? craft.name : "Not sure"}`,
     `Band: ${band ? `${band.price} — ${band.name}` : "Not sure yet"}`,
-    `Atmosphere: ${atmosphere ? `${atmosphere.title} (${atmosphere.job})` : "Not sure"}`,
+    `Threshold: ${atmosphere ? `${atmosphere.title} (${atmosphere.job})` : "Not sure"}`,
     `Brand word: ${word || "—"}`,
     "",
     body.note?.trim() || "(no note)",

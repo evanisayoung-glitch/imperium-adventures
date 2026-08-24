@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { YoursWalk } from "@/components/possible/YoursWalk";
+import { YoursComposer } from "@/components/commission/YoursComposer";
 
 export const metadata: Metadata = {
   title: "Yours",
   description:
-    "Type your brand word, pick a first-screen atmosphere, and see what Imperium can commission for your site.",
+    "Try a particle identity, a painting reveal, and a Three.js threshold — then commission the opening for your site.",
 };
 
 type PageProps = {
@@ -13,5 +13,5 @@ type PageProps = {
 
 export default async function YoursPage({ searchParams }: PageProps) {
   const { study } = await searchParams;
-  return <YoursWalk key={study ?? "default"} initialStudy={study} />;
+  return <YoursComposer key={study ?? "default"} initialStudy={study} />;
 }

@@ -12,27 +12,22 @@ const links = [
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const dark = pathname === "/" || pathname === "/yours" || pathname.startsWith("/crm");
 
   return (
-    <header className="absolute inset-x-0 top-0 z-30">
-      <div
-        className={`mx-auto flex max-w-[1400px] items-baseline justify-between gap-6 px-6 py-6 md:px-12 ${
-          dark ? "text-atelier-ivory" : "text-ink"
-        }`}
-      >
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-ivory/10 bg-void/72 text-ivory backdrop-blur-md">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-6 py-4 md:px-12">
         <Link href="/" className="display text-[1.35rem] leading-none tracking-tight">
           Imperium
         </Link>
-        <nav className="hidden items-baseline gap-x-7 text-[15px] sm:flex">
+        <nav className="hidden items-center gap-x-8 text-[13px] tracking-[0.04em] sm:flex">
           {links.map((link) => {
             const active = pathname === link.href || pathname.startsWith(`${link.href}/`);
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`transition-opacity hover:opacity-100 ${
-                  active ? "opacity-100" : "opacity-55"
+                className={`transition-colors ${
+                  active ? "text-gold" : "text-ivory/55 hover:text-ivory"
                 }`}
               >
                 {link.label}
@@ -40,7 +35,7 @@ export function SiteHeader() {
             );
           })}
         </nav>
-        <Link href="/inquire" className="text-[15px] sm:hidden">
+        <Link href="/inquire" className="text-[13px] tracking-[0.04em] text-gold sm:hidden">
           Inquire
         </Link>
       </div>

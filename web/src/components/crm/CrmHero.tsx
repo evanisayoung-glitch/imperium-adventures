@@ -15,7 +15,7 @@ export function CrmHero() {
               when the site is not enough.
             </p>
             <p className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-[16px]">
-              <Link href="/inquire?need=product&band=estate" className="link-quiet text-gold-soft">
+              <Link href="/inquire?need=product&band=estate&craft=os" className="link-quiet text-gold-soft">
                 Start a CRM build
               </Link>
               <Link href="#finti" className="link-quiet text-field/70">

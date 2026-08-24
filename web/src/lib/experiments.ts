@@ -9,31 +9,31 @@ export const experiments: Experiment[] = [
   {
     slug: "wordmark",
     title: "Particle Wordmark",
-    tagline: "Dots that only form your brand when a visitor earns it — a client-ready field.",
+    tagline: "The identity engine — dots that only form a brand when a visitor earns it.",
+    status: "live",
+  },
+  {
+    slug: "pomodoro",
+    title: "Painting Reveal",
+    tagline: "The patience engine — a Met masterpiece lifts as someone waits or focuses.",
     status: "live",
   },
   {
     slug: "compass",
     title: "Living Compass",
-    tagline: "Pointer tracking with soft magnetic ease — brand motion in the wild.",
+    tagline: "Pointer tracking with magnetic ease — atmosphere that answers the hand.",
     status: "live",
   },
   {
     slug: "mist",
     title: "Mountain Mist",
-    tagline: "Fixed mountain ridgelines with mist you can grab and drag.",
+    tagline: "Ridgelines hold. Weather moves. Drag the mist.",
     status: "live",
   },
   {
     slug: "typeforge",
     title: "Typeforge",
-    tagline: "Live display type playground for headlines that feel like Imperium.",
-    status: "live",
-  },
-  {
-    slug: "pomodoro",
-    title: "Gallery Pomodoro",
-    tagline: "A focus timer that slowly paints masterpieces from The Met as you work.",
+    tagline: "Live display type for headlines that feel like the house.",
     status: "live",
   },
 ];

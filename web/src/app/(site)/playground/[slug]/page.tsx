@@ -37,7 +37,7 @@ export default async function ExperimentPage({ params }: Props) {
         <Link href="/playground" className="link-quiet text-[15px] text-muted">
           Lab
         </Link>
-        <h1 className="display mt-6 text-[clamp(3rem,7vw,5.5rem)] italic leading-[0.92] tracking-tight">
+        <h1 className="display mt-6 text-[clamp(3rem,7vw,5.5rem)] leading-[0.92] tracking-tight">
           {experiment.title}
         </h1>
         <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted">{experiment.tagline}</p>

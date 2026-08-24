@@ -10,8 +10,11 @@
   --field-warm: #e8dfd0;
   --ink: #12110e;
   --muted: #6f685c;
-  --background: var(--field);
-  --foreground: var(--ink);
+  --void: #050605;
+  --ivory: #f3ede0;
+  --paper: #e8e0d0;
+  --background: var(--void);
+  --foreground: var(--ivory);
   --atelier-void: #080806;
   --atelier-panel: #10100d;
   --atelier-raised: #17150f;
@@ -33,6 +36,9 @@
   --color-field-warm: var(--field-warm);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
+  --color-void: var(--void);
+  --color-ivory: var(--ivory);
+  --color-paper: var(--paper);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
   --font-mono: var(--font-mono);
@@ -56,10 +62,10 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body), "Times New Roman", serif;
-  font-size: 1.0625rem;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.96875rem;
   line-height: 1.6;
-  -webkit-tap-highlight-color: color-mix(in srgb, var(--ink) 12%, transparent);
+  -webkit-tap-highlight-color: color-mix(in srgb, var(--ivory) 12%, transparent);
 }
 
 .touch-range {
@@ -88,8 +94,8 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--gold) 45%, transparent);
-  color: var(--forest-deep);
+  background: color-mix(in srgb, var(--gold) 42%, transparent);
+  color: var(--void);
 }
 
 @keyframes rise-in {
@@ -133,7 +139,6 @@ body {
     opacity: 0.85;
   }
 }
-
 
 @keyframes pipeline-glide {
   from {
@@ -258,8 +263,8 @@ body {
 }
 
 .display {
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display), "Times New Roman", serif;
+  letter-spacing: -0.035em;
   font-weight: 500;
 }
 
@@ -276,18 +281,31 @@ body {
   text-decoration-color: currentColor;
 }
 
+.link-gold {
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--gold) 40%, transparent);
+  text-underline-offset: 0.38em;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.link-gold:hover {
+  text-decoration-color: var(--gold);
+}
+
 .cta-ink {
   display: inline-flex;
   min-height: 2.75rem;
   align-items: center;
-  background: var(--ink);
+  background: var(--ivory);
   padding: 0.7rem 1.25rem;
-  color: var(--field);
+  color: var(--void);
   transition: background 0.2s ease;
 }
 
 .cta-ink:hover {
-  background: color-mix(in srgb, var(--ink) 88%, white);
+  background: var(--gold-soft);
 }
 
 .cta-ivory {
@@ -308,19 +326,24 @@ body {
   min-height: 2.75rem;
   width: 100%;
   border: 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent);
   background: transparent;
   padding: 0.55rem 0;
-  color: var(--ink);
+  color: inherit;
   outline: none;
 }
 
 .field-input:focus {
-  border-bottom-color: var(--ink);
+  border-bottom-color: var(--gold);
+}
+
+select.field-input option {
+  color: #12110e;
+  background: #f3ede0;
 }
 
 input[type="radio"] {
-  accent-color: var(--ink);
+  accent-color: var(--gold);
 }
 
 .mono {
@@ -339,10 +362,5 @@ input[type="radio"] {
 
 .rule-gold {
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--gold),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }

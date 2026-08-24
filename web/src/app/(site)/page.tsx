@@ -1,13 +1,12 @@
-import { CloseBand } from "@/components/CloseBand";
-import { Hero } from "@/components/Hero";
-import { OfferStrip } from "@/components/OfferStrip";
+import { HomeLedger, HomeShow } from "@/components/commission/HomeShow";
+import { HouseClose } from "@/components/commission/HouseClose";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <OfferStrip />
-      <CloseBand />
+      <HomeShow />
+      <HomeLedger />
+      <HouseClose />
     </>
   );
 }
