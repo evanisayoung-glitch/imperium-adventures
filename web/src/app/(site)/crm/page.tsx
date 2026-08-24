@@ -10,13 +10,13 @@ import {
 } from "@/components/crm/CrmSections";
 
 export const metadata: Metadata = {
-  title: "Custom CRM Builds",
+  title: "The morning book",
   description:
-    "Imperium Adventures builds custom CRMs and sales operating systems. Explore detailed Find, Close, Grow, and Win features from Finti Sales OS.",
+    "Imperium Adventures makes the desk a sales house opens first. See Find, Close, Grow, and Win in Finti.",
   openGraph: {
-    title: "Custom CRM Builds · Imperium Adventures",
+    title: "The morning book · Imperium Adventures",
     description:
-      "Purpose-built sales operating systems. Detailed feature pages for Find, Close, Grow, and Win — engineered by Imperium Adventures.",
+      "The desk a sales house opens first. Find, Close, Grow, and Win — made by Imperium Adventures.",
     type: "website",
   },
 };

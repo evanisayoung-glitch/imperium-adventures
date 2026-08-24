@@ -307,6 +307,6 @@ export const platformCapabilities = [
   },
   {
     title: "Modern delivery stack",
-    body: "Next.js front ends, durable backends, and room to grow as the sales org scales.",
+    body: "Built to last, with room to grow as the sales house scales.",
   },
 ] as const;
