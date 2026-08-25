@@ -18,7 +18,7 @@ export function AtelierStudyView({ study }: { study: AtelierStudy }) {
           slug={study.slug}
           variant={variant}
           paused={paused}
-          className="absolute inset-0 h-full w-full"
+          className="absolute inset-0"
           dpr={[1, 1.6]}
         />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-atelier-void/70 to-transparent" />
@@ -40,6 +40,10 @@ export function AtelierStudyView({ study }: { study: AtelierStudy }) {
           <p className="mt-2 text-lg text-atelier-ivory/70">{study.subtitle}</p>
           <div className="atelier-hairline my-6" />
           <p className="text-sm leading-relaxed text-atelier-ivory/72">{study.statement}</p>
+          <p className="mt-5 text-sm leading-relaxed text-atelier-champagne/80">
+            On a client site — this finish as the opening screen, or behind a booking form.
+            The study is proof. The commission is the page.
+          </p>
 
           <div className="mt-8">
             <p className="mono text-[10px] tracking-[0.2em] text-atelier-muted">FINISH</p>
@@ -71,16 +75,14 @@ export function AtelierStudyView({ study }: { study: AtelierStudy }) {
         </div>
 
         <div className="border-t border-atelier-line px-6 py-6 sm:px-8">
-          <a
-            href={`mailto:Imperiumadventures99@gmail.com?subject=${encodeURIComponent(
-              `Commission inquiry — ${study.title}`,
-            )}`}
-            className="inline-flex min-h-11 w-full items-center justify-center bg-atelier-ivory text-sm tracking-[0.16em] uppercase text-atelier-void transition hover:bg-atelier-champagne"
+          <Link
+            href={`/inquire?study=${study.slug}&need=first-screen`}
+            className="cta-ivory w-full justify-center text-[15px]"
           >
-            Commission this study
-          </a>
+            Use this in a build
+          </Link>
           <p className="mono mt-3 text-center text-[10px] tracking-[0.14em] text-atelier-muted">
-            Private builds · Vercel · by appointment
+            Private work · by appointment
           </p>
         </div>
       </aside>

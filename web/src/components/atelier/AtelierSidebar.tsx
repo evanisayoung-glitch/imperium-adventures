@@ -65,14 +65,14 @@ export function AtelierSidebar({ onNavigate }: { onNavigate?: () => void }) {
         <SidebarLink href="/playground" onClick={onNavigate}>
           Playground
         </SidebarLink>
-        <SidebarLink href="/#hire" onClick={onNavigate}>
+        <SidebarLink href="/inquire" onClick={onNavigate}>
           Commission
         </SidebarLink>
       </nav>
 
       <div className="border-t border-atelier-line px-5 py-4">
         <p className="mono text-[10px] leading-relaxed tracking-[0.14em] text-atelier-muted">
-          Eight private studies. Live Three.js. By appointment.
+          Eight private studies. Lit like jewelry. By appointment.
         </p>
       </div>
     </aside>

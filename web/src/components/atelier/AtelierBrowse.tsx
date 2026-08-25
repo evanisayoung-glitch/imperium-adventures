@@ -26,7 +26,7 @@ export function AtelierBrowse({
           <p className="mono text-[10px] tracking-[0.28em] text-atelier-muted">PRIVATE COLLECTION</p>
           <h1 className="display mt-2 text-4xl text-atelier-ivory sm:text-5xl">The cabinet</h1>
           <p className="mt-2 max-w-xl text-sm leading-relaxed text-atelier-ivory/65">
-            Live Three.js studies, finished like jewelry. No stock scenes. No rush.
+            Private studies, finished like jewelry. No stock pictures. No rush.
           </p>
         </div>
         <label className="block w-full max-w-sm">

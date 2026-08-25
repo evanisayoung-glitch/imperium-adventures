@@ -2,49 +2,34 @@ import Link from "next/link";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-forest/15 bg-forest-deep text-field">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:flex-row sm:items-end sm:justify-between sm:px-8">
+    <footer className="border-t border-ivory/10 bg-void text-ivory">
+      <div className="mx-auto flex max-w-[1400px] flex-col gap-10 px-6 py-14 md:flex-row md:items-end md:justify-between md:px-12">
         <div>
-          <p className="display text-lg tracking-[0.18em]">IMPERIUM ADVENTURES</p>
-          <p className="mt-2 max-w-md text-sm text-field/70">
-            A living studio for experiments, prototypes, and client-ready web craft.
+          <p className="display text-2xl tracking-tight">Imperium Adventures</p>
+          <p className="mt-3 max-w-sm text-[14px] leading-relaxed text-ivory/45">
+            Websites for houses that refuse to look ordinary. Five to fifty thousand.
           </p>
         </div>
-        <div className="flex flex-col gap-1 text-sm text-field/75 sm:items-end">
-          <Link
-            href="/atelier"
-            className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
-          >
+        <nav className="flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-ivory/45">
+          <Link href="/yours" className="hover:text-ivory">
+            Yours
+          </Link>
+          <Link href="/inquire" className="hover:text-ivory">
+            Inquire
+          </Link>
+          <Link href="/atelier" className="hover:text-ivory">
             Atelier
           </Link>
-          <Link
-            href="/playground/wordmark"
-            className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
-          >
-            Particle wordmark
+          <Link href="/playground" className="hover:text-ivory">
+            Lab
           </Link>
-          <Link
-            href="/crm"
-            className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
-          >
-            Custom CRM builds
+          <Link href="/crm" className="hover:text-ivory">
+            Finti
           </Link>
-          <Link
-            href="/playground"
-            className="inline-flex min-h-11 items-center transition-colors hover:text-gold-soft active:text-gold-soft"
-          >
-            Open playground
-          </Link>
-          <a
-            href="mailto:Imperiumadventures99@gmail.com?subject=Website%20project%20inquiry"
-            className="inline-flex min-h-11 items-center break-all transition-colors hover:text-gold-soft active:text-gold-soft"
-          >
-            Imperiumadventures99@gmail.com
-          </a>
-          <p className="text-xs text-field/50">
-            © {new Date().getFullYear()} Imperium Adventures LLC
-          </p>
-        </div>
+        </nav>
+        <p className="text-[12px] text-ivory/35">
+          © {new Date().getFullYear()} Imperium Adventures LLC
+        </p>
       </div>
     </footer>
   );

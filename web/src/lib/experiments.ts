@@ -8,32 +8,32 @@ export type Experiment = {
 export const experiments: Experiment[] = [
   {
     slug: "wordmark",
-    title: "Particle Wordmark",
-    tagline: "Dots that only form your brand when a visitor earns it — a client-ready field.",
+    title: "Your name, earned",
+    tagline: "Gold dust that only becomes a word when a guest works for it.",
+    status: "live",
+  },
+  {
+    slug: "pomodoro",
+    title: "A painting that waits",
+    tagline: "A masterpiece from The Met lifts as someone stays with you.",
     status: "live",
   },
   {
     slug: "compass",
-    title: "Living Compass",
-    tagline: "Pointer tracking with soft magnetic ease — brand motion in the wild.",
+    title: "Living compass",
+    tagline: "The needle follows the hand.",
     status: "live",
   },
   {
     slug: "mist",
-    title: "Mountain Mist",
-    tagline: "Fixed mountain ridgelines with mist you can grab and drag.",
+    title: "Mountain mist",
+    tagline: "Ridges hold. Weather moves. Drag the mist.",
     status: "live",
   },
   {
     slug: "typeforge",
     title: "Typeforge",
-    tagline: "Live display type playground for headlines that feel like Imperium.",
-    status: "live",
-  },
-  {
-    slug: "pomodoro",
-    title: "Gallery Pomodoro",
-    tagline: "A focus timer that slowly paints masterpieces from The Met as you work.",
+    tagline: "Headlines that feel like the house.",
     status: "live",
   },
 ];

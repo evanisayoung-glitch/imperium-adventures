@@ -6,12 +6,15 @@
   --forest-mid: #2d6a4f;
   --gold: #c9a227;
   --gold-soft: #e0c35a;
-  --field: #f7f4ec;
-  --field-warm: #efe8d8;
-  --ink: #14241c;
-  --muted: #4a6356;
-  --background: var(--field);
-  --foreground: var(--ink);
+  --field: #f2ebe0;
+  --field-warm: #e8dfd0;
+  --ink: #12110e;
+  --muted: #6f685c;
+  --void: #050605;
+  --ivory: #f3ede0;
+  --paper: #e8e0d0;
+  --background: var(--void);
+  --foreground: var(--ivory);
   --atelier-void: #080806;
   --atelier-panel: #10100d;
   --atelier-raised: #17150f;
@@ -33,6 +36,9 @@
   --color-field-warm: var(--field-warm);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
+  --color-void: var(--void);
+  --color-ivory: var(--ivory);
+  --color-paper: var(--paper);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
   --font-mono: var(--font-mono);
@@ -56,8 +62,10 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body), Georgia, serif;
-  -webkit-tap-highlight-color: color-mix(in srgb, var(--gold) 28%, transparent);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.96875rem;
+  line-height: 1.6;
+  -webkit-tap-highlight-color: color-mix(in srgb, var(--ivory) 12%, transparent);
 }
 
 .touch-range {
@@ -86,8 +94,8 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--gold) 45%, transparent);
-  color: var(--forest-deep);
+  background: color-mix(in srgb, var(--gold) 42%, transparent);
+  color: var(--void);
 }
 
 @keyframes rise-in {
@@ -131,7 +139,6 @@ body {
     opacity: 0.85;
   }
 }
-
 
 @keyframes pipeline-glide {
   from {
@@ -207,7 +214,12 @@ body {
   .gold-pulse,
   .mist-layer,
   .bar-fill,
-  .score-ring {
+  .score-ring,
+  .animate-rise,
+  .animate-rise-delay-1,
+  .animate-rise-delay-2,
+  .animate-rise-delay-3,
+  .pipeline-glide {
     animation: none !important;
     transition: none !important;
   }
@@ -251,8 +263,87 @@ body {
 }
 
 .display {
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
-  letter-spacing: 0.04em;
+  font-family: var(--font-display), "Times New Roman", serif;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+}
+
+.link-quiet {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  text-underline-offset: 0.35em;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.link-quiet:hover {
+  text-decoration-color: currentColor;
+}
+
+.link-gold {
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--gold) 40%, transparent);
+  text-underline-offset: 0.38em;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.link-gold:hover {
+  text-decoration-color: var(--gold);
+}
+
+.cta-ink {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  background: var(--ivory);
+  padding: 0.7rem 1.25rem;
+  color: var(--void);
+  transition: background 0.2s ease;
+}
+
+.cta-ink:hover {
+  background: var(--gold-soft);
+}
+
+.cta-ivory {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  background: var(--atelier-ivory);
+  padding: 0.7rem 1.25rem;
+  color: var(--atelier-void);
+  transition: background 0.2s ease;
+}
+
+.cta-ivory:hover {
+  background: var(--atelier-champagne);
+}
+
+.field-input {
+  min-height: 2.75rem;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+  background: transparent;
+  padding: 0.55rem 0;
+  color: inherit;
+  outline: none;
+}
+
+.field-input:focus {
+  border-bottom-color: var(--gold);
+}
+
+select.field-input option {
+  color: #12110e;
+  background: #f3ede0;
+}
+
+input[type="radio"] {
+  accent-color: var(--gold);
 }
 
 .mono {
@@ -271,10 +362,51 @@ body {
 
 .rule-gold {
   height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.spectrum-bar {
+  height: 3px;
   background: linear-gradient(
     90deg,
-    transparent,
-    var(--gold),
-    transparent
+    #ff3b5c,
+    #ff7a3c,
+    #ffd12a,
+    #c9a227,
+    #7dce4a,
+    #14b8a6,
+    #3b82f6,
+    #7c3aed,
+    #db2777,
+    #ff3b5c
   );
+}
+
+.silk-fold {
+  will-change: transform;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.spectrum-bloom {
+  will-change: left, top, background;
+}
+
+body.has-light-trail,
+body.has-light-trail a,
+body.has-light-trail button,
+body.has-light-trail label {
+  cursor: none;
+}
+
+body.has-light-trail input,
+body.has-light-trail textarea,
+body.has-light-trail select {
+  cursor: text;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .silk-fold,
+  .spectrum-bloom {
+    transition: none;
+  }
 }

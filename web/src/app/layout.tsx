@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Cormorant_Garamond, IBM_Plex_Mono, Source_Sans_3 } from "next/font/google";
+import { Bodoni_Moda, Geist, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const display = Cormorant_Garamond({
+const display = Bodoni_Moda({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600"],
 });
 
-const body = Source_Sans_3({
+const body = Geist({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
 });
 
 const mono = IBM_Plex_Mono({
@@ -23,15 +22,15 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Imperium Adventures — Playground & Studio",
+    default: "Imperium Adventures — Commissioned websites",
     template: "%s · Imperium Adventures",
   },
   description:
-    "Imperium Adventures LLC playground for new web features — and a showcase for client website work.",
+    "Imperium Adventures makes websites for houses that refuse to look ordinary — from $5,000 to $50,000.",
   openGraph: {
-    title: "Imperium Adventures — Playground & Studio",
+    title: "Imperium Adventures — Commissioned websites",
     description:
-      "A living studio for experiments, prototypes, and client-ready web craft.",
+      "Websites that refuse to look ordinary. Living openings. Five to fifty thousand.",
     type: "website",
   },
 };
@@ -42,7 +41,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="en"
       className={`${display.variable} ${body.variable} ${mono.variable} h-full antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full bg-void text-ivory">{children}</body>
     </html>
   );
 }

@@ -18,7 +18,7 @@ Primary logo and brand materials live in [`brand/`](./brand/).
 
 ## Website
 
-The public playground and client showcase lives in [`web/`](./web/) and deploys to Vercel (root directory: `web`).
+The public studio lives in [`web/`](./web/) and deploys to Vercel (root directory: `web`): commissioned websites, a cabinet of live studies, and a private lab.
 
 ## Repository layout
 

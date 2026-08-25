@@ -4,7 +4,13 @@ import { useCallback, useEffect, useRef } from "react";
 
 type Offset = { x: number; y: number };
 
-export function MistCanvas() {
+export function MistCanvas({
+  className,
+  hideCaption = false,
+}: {
+  className?: string;
+  hideCaption?: boolean;
+}) {
   const surfaceRef = useRef<HTMLDivElement>(null);
   const mistRef = useRef<HTMLDivElement>(null);
   const offset = useRef<Offset>({ x: 0, y: 0 });
@@ -143,7 +149,10 @@ export function MistCanvas() {
   return (
     <div
       ref={surfaceRef}
-      className="interactive-surface relative h-[420px] overflow-hidden rounded-sm border border-forest/15 bg-[#0f2a1f] sm:h-[520px]"
+      className={`interactive-surface overflow-hidden bg-[#0f2a1f] ${
+        className ??
+        "relative h-[420px] rounded-sm border border-forest/15 sm:h-[520px]"
+      }`}
       style={{
         touchAction: "none",
         WebkitUserSelect: "none",
@@ -215,11 +224,13 @@ export function MistCanvas() {
 
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_15%,rgba(15,42,31,0.55)_100%)]" />
 
-      <div className="pointer-events-none absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0f2a1f] via-[#0f2a1f]/70 to-transparent px-5 pb-5 pt-16">
-        <p className="text-sm text-field/85">
-          Press and drag — mountains stay put; only the mist drifts.
-        </p>
-      </div>
+      {hideCaption ? null : (
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0f2a1f] via-[#0f2a1f]/70 to-transparent px-5 pb-5 pt-16">
+          <p className="text-sm text-field/85">
+            Press and drag — mountains stay put; only the mist drifts.
+          </p>
+        </div>
+      )}
     </div>
   );
 }

@@ -197,21 +197,15 @@ export function CrmOffer() {
             </li>
             <li className="flex gap-3">
               <span className="text-gold-soft">—</span>
-              Next.js + modern backends, ready for multi-user scale
+              Built to last as the team grows
             </li>
           </ul>
-          <div className="mt-12 flex flex-wrap gap-3">
-            <a
-              href="mailto:Imperiumadventures99@gmail.com?subject=Custom%20CRM%20build%20inquiry"
-              className="bg-gold px-6 py-3 text-sm font-medium tracking-[0.12em] uppercase text-forest-deep transition hover:bg-gold-soft"
-            >
+          <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[16px]">
+            <Link href="/inquire?need=product&band=estate" className="link-quiet text-gold-soft">
               Talk about your CRM
-            </a>
-            <Link
-              href="/#hire"
-              className="border border-field/35 px-6 py-3 text-sm tracking-[0.12em] uppercase text-field transition hover:border-gold hover:text-gold-soft"
-            >
-              General hire inquiry
+            </Link>
+            <Link href="/inquire" className="link-quiet text-field/70">
+              Website commission
             </Link>
           </div>
         </Reveal>
