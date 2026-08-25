@@ -33,7 +33,7 @@ export const experiments: Experiment[] = [
   {
     slug: "typeforge",
     title: "Typeforge",
-    tagline: "Headlines that feel like the house.",
+    tagline: "Headlines that feel like your brand.",
     status: "live",
   },
 ];

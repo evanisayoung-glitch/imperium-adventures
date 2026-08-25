@@ -30,7 +30,7 @@ export const studies: AtelierStudy[] = [
     tags: ["three.js", "world", "forest"],
     blurb: "A private grove. Gold pollen, deep canopy, a camera that never hurries.",
     statement:
-      "Commissioned as a living threshold. The grove is procedural — no textures, no stock trees — only geometry, fog, and a measured orbit. Built for houses that want their first screen to feel like an estate, not a product.",
+      "Made for a first page that feels like land, not a product shot. The grove is built from scratch — no stock trees — only shape, fog, and a slow camera.",
     variants: [
       { id: "dusk", label: "Dusk" },
       { id: "midnight", label: "Midnight" },
@@ -81,7 +81,7 @@ export const studies: AtelierStudy[] = [
     tags: ["three.js", "instrument", "gold"],
     blurb: "A compass that follows the hand. Navigation as jewelry.",
     statement:
-      "The house instrument. A gilt rose with a needle that tracks the pointer — the same magnetic ease as the living compass, recast as a three-dimensional object you could almost lift from the table.",
+      "A gilt rose with a needle that tracks the pointer — the same magnetic ease as the living compass, recast as a three-dimensional object you could almost lift from the table.",
     variants: [
       { id: "gilt", label: "Gilt" },
       { id: "enamel", label: "Enamel" },
@@ -144,12 +144,12 @@ export const studies: AtelierStudy[] = [
     slug: "blason",
     edition: "08",
     title: "Blason",
-    subtitle: "House Crest",
+    subtitle: "Brand Crest",
     family: "relics",
     tags: ["three.js", "heraldry", "enamel"],
     blurb: "A shield in forest enamel and gold. Identity you can orbit.",
     statement:
-      "The Imperium crest recast as a relief. Forest enamel, gold rim, a rose at the heart. For marques that still believe a house should have arms.",
+      "The Imperium crest recast as a relief. Forest enamel, gold rim, a rose at the heart. For brands that still want a mark you can orbit.",
     variants: [
       { id: "enamel", label: "Enamel" },
       { id: "gilt", label: "Full gilt" },
@@ -160,7 +160,7 @@ export const studies: AtelierStudy[] = [
 ];
 
 export const familyCopy: Record<AtelierFamily, { label: string; countHint: string }> = {
-  worlds: { label: "Worlds", countHint: "estates" },
+  worlds: { label: "Worlds", countHint: "places" },
   relics: { label: "Relics", countHint: "objects" },
   fields: { label: "Fields", countHint: "atmospheres" },
   motion: { label: "Motion", countHint: "studies" },

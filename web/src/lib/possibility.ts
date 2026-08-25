@@ -10,30 +10,30 @@ export const atmospheres: Atmosphere[] = [
   {
     slug: "sylva",
     variant: "dusk",
-    job: "Estate",
+    job: "Grove",
     title: "Grove",
-    line: "An opening that feels like land — not a shop window.",
+    line: "A first page that feels like land — not a shop window.",
   },
   {
     slug: "or",
     variant: "knot",
-    job: "Relic",
+    job: "Gilt",
     title: "Gilt",
     line: "One object, lit as if it were in a glass case.",
   },
   {
     slug: "nimbus",
     variant: "drift",
-    job: "Weather",
+    job: "Field",
     title: "Field",
     line: "Soft gold weather behind the words.",
   },
   {
     slug: "velours",
     variant: "champagne",
-    job: "Evening",
+    job: "Cloth",
     title: "Cloth",
-    line: "Sheen and weight for houses that dress the opening.",
+    line: "Sheen and weight for brands that dress the first page.",
   },
 ];
 
@@ -55,7 +55,7 @@ export const investmentBands: InvestmentBand[] = [
     price: "$5,000",
     name: "Presence",
     summary:
-      "A website that looks like your house — not a ready-made page with your logo dropped in.",
+      "A website that looks like your brand — not a ready-made page with your logo dropped in.",
     includes: ["Five to eight pages, carefully made", "Motion with a reason", "Ready on your own address"],
   },
   {
@@ -63,10 +63,10 @@ export const investmentBands: InvestmentBand[] = [
     price: "$18,000",
     name: "Signature",
     summary:
-      "Presence, plus one living opening: your name in gold dust, a painting that waits, every color you own, or cloth of light.",
+      "Presence, plus one living first page: your name in gold dust, a painting that waits, every color you own, or cloth of light.",
     includes: [
       "Everything in Presence",
-      "One living opening of your choosing",
+      "One living first page of your choosing",
       "Deeper art direction",
     ],
   },
@@ -75,10 +75,10 @@ export const investmentBands: InvestmentBand[] = [
     price: "$50,000",
     name: "Estate",
     summary:
-      "A full house: a living doorway, more than one opening, and — if the team needs it — the morning book they work from.",
+      "The full site: a living object on the first page, more than one of these features, and — if the team needs it — the morning book they work from.",
     includes: [
       "Everything in Signature",
-      "A living doorway",
+      "A living object on the first page",
       "The morning book, if you need it",
     ],
   },
@@ -91,18 +91,18 @@ export function getBand(id?: string | null) {
 export const processSteps = [
   {
     title: "Meet",
-    body: "Who you are, what you are launching, and how the first moment should feel.",
+    body: "Who you are, what you are launching, and how the first page should feel.",
   },
   {
     title: "Choose",
-    body: "The opening guests see — name, painting, color, cloth, doorway. You approve before we make it.",
+    body: "What people see first — name, painting, color, cloth, object. You approve before we make it.",
   },
   {
     title: "Make",
     body: "The same living work you tried here, placed on your own address.",
   },
   {
-    title: "Open",
-    body: "We hand it over, show you how it lives, and leave room to grow later.",
+    title: "Launch",
+    body: "We hand it over, show you how it works, and leave room to grow later.",
   },
 ] as const;

@@ -7,7 +7,7 @@ import { investmentBands, processSteps } from "@/lib/possibility";
 export const metadata: Metadata = {
   title: "Engage",
   description:
-    "How a website commission with Imperium Adventures works — from first meeting to opening day, $5,000 to $50,000.",
+    "How a website commission with Imperium Adventures works — from first meeting to launch, $5,000 to $50,000.",
 };
 
 type PageProps = {
@@ -22,7 +22,7 @@ export default async function EngagePage({ searchParams }: PageProps) {
     <LetterPage
       kicker="Engage"
       title="How we work together."
-      lede="The price is about the first thing guests see — and the house underneath. Not hours on a sheet."
+      lede="The price is about the first thing people see — and the site underneath. Not hours on a sheet."
     >
       <ol className="divide-y divide-ivory/10 border-y border-ivory/10">
         {processSteps.map((step, index) => (
@@ -96,8 +96,8 @@ export default async function EngagePage({ searchParams }: PageProps) {
           A morning book for the team.
         </h2>
         <p className="mt-6 text-[15px] leading-relaxed text-ivory/55">
-          We made Finti — the desk a sales house opens first. It belongs with an Estate
-          commission, not as a second shop window.
+          We made Finti — the desk a sales team opens first. It belongs with an Estate
+          commission, not as a second website.
         </p>
         <p className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-[15px]">
           <Link href="/inquire?need=product&band=estate&craft=os" className="link-gold">

@@ -69,7 +69,7 @@ export function SpectrumField({
       onPointerMove={(event) => paint(event.clientX, event.clientY)}
       onPointerDown={(event) => paint(event.clientX, event.clientY)}
       role="application"
-      aria-label="Move across the colors. The house follows."
+      aria-label="Move across the colors. Your brand follows."
     >
       <div
         className="pointer-events-none absolute inset-0"

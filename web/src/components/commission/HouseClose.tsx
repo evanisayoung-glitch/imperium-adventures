@@ -40,7 +40,7 @@ export function HouseClose() {
           <div className="max-w-xl">
             <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">Inquire</p>
             <p className="display mt-4 text-[clamp(2rem,4vw,3.4rem)] leading-[0.94] tracking-tight">
-              The first screen is the work.
+              The first page is the work.
             </p>
           </div>
           <Link href="/inquire" className="cta-ink text-[15px]">

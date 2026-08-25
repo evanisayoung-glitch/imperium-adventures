@@ -5,7 +5,7 @@ import { experiments } from "@/lib/experiments";
 
 export const metadata: Metadata = {
   title: "Lab",
-  description: "Private floor — the trials behind the openings we put on a house.",
+  description: "Private floor — the trials behind the first pages we put on a site.",
 };
 
 export default function PlaygroundIndexPage() {
@@ -13,7 +13,7 @@ export default function PlaygroundIndexPage() {
     <LetterPage
       kicker="Lab"
       title="Private floor."
-      lede="Private trials. The path for a new house is Yours, Engage, and Inquire."
+      lede="Private trials. The path for a new site is Yours, Engage, and Inquire."
     >
       <ul className="divide-y divide-ivory/10 border-y border-ivory/10">
         {experiments.map((item) => (

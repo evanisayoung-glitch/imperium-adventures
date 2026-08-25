@@ -99,7 +99,7 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
         </div>
       </fieldset>
       <label className="block space-y-2 text-[14px] text-ivory/50">
-        What should guests see first?
+        What should people see first?
         <select
           value={craft}
           onChange={(event) => setCraft(event.target.value)}
@@ -135,7 +135,7 @@ export function InquireForm({ prefill }: { prefill: InquirePrefill }) {
         ) : null}
       </label>
       <label className="block space-y-2 text-[14px] text-ivory/50">
-        The doorway
+        The look
         <select
           value={study}
           onChange={(event) => setStudy(event.target.value)}
