@@ -41,7 +41,7 @@ export function HomeShow() {
           index="01"
           kicker="Name"
           title="Your name is earned."
-          body="Gold dust. Guests move a little before your word appears. This is the first thing we put on a house — not a logo file on a ready-made page."
+          body="Gold dust. People move a little before your word appears. This is the first thing we put on a site — not a logo file on a ready-made page."
           href={inquireHref(identity, { word })}
           hrefLabel="I want this"
         >
@@ -87,7 +87,7 @@ export function HomeShow() {
           index="03"
           kicker="Color"
           title="Every color you own."
-          body="Move across the field. Rose, saffron, jade, indigo — the house finds a color and keeps it. This is how a brand feels, not how a palette is listed."
+          body="Move across the field. Rose, saffron, jade, indigo — your brand finds a color and keeps it. This is how a brand feels, not how a palette is listed."
           href={inquireHref(spectrum, { word })}
           hrefLabel="I want this"
         />
@@ -99,7 +99,7 @@ export function HomeShow() {
           index="04"
           kicker="Cloth"
           title="Light, folded."
-          body="Shot silk. Evening rose, morning gold, deep teal. The cloth answers as they pass — a dress for the opening, not a flat wash of paint."
+          body="Shot silk. Evening rose, morning gold, deep teal. The cloth answers as they pass — a first page that moves, not a flat wash of paint."
           href={inquireHref(silk)}
           hrefLabel="I want this"
         />
@@ -110,9 +110,9 @@ export function HomeShow() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void/80 via-void/15 to-void/50" />
         <ChapterFrame
           index="05"
-          kicker="Doorway"
-          title="A door. Not a picture."
-          body="One object in the room, lit like jewelry. Grove, gilt, cloth, weather. Photography you do not need."
+          kicker="Object"
+          title="A real object. Not a photo."
+          body="One object on the first page, lit like jewelry. Grove, gilt, cloth, weather. Photography you do not need."
           href={inquireHref(threshold, { study: "or" })}
           hrefLabel="I want this"
           align="end"
@@ -161,7 +161,7 @@ export function HomeLedger() {
       <div className="mx-auto max-w-[1180px]">
         <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">07 — On your site</p>
         <h2 className="display mt-5 max-w-3xl text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.9] tracking-tight">
-          What we can put on your house.
+          What we can put on your site.
         </h2>
         <ul className="mt-16 divide-y divide-ivory/10 border-y border-ivory/10">
           {crafts.map((craft) => (

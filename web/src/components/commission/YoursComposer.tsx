@@ -40,7 +40,7 @@ export function YoursComposer({ initialStudy }: { initialStudy?: string }) {
           index="01"
           kicker="Yours"
           title={word || "IMPERIUM"}
-          body="Type a short word. Scrub or tap until it gathers. This is how a house meets its name."
+          body="Type a short word. Scrub or tap until it gathers. This is how people meet your name."
           href={href}
           hrefLabel="Begin with this mark"
         >
@@ -80,7 +80,7 @@ export function YoursComposer({ initialStudy }: { initialStudy?: string }) {
           index="03"
           kicker="Color"
           title="Find your color."
-          body="Move across every hue. The word takes rose, gold, jade, indigo — whatever the house is."
+          body="Move across every hue. The word takes rose, gold, jade, indigo — whatever your brand is."
           href={inquireHref(crafts.find((item) => item.id === "spectrum")!, { word })}
           hrefLabel="I want the colors"
         />
@@ -96,7 +96,7 @@ export function YoursComposer({ initialStudy }: { initialStudy?: string }) {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void/82 via-void/20 to-void/45" />
         <div className="pointer-events-none relative z-10 flex min-h-[100svh] flex-col justify-between px-6 pb-16 pt-28 md:px-12 md:pb-20 md:pt-32">
           <div className="max-w-lg">
-            <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">04 — Doorway</p>
+            <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">04 — Object</p>
             <h2 className="display mt-5 text-[clamp(2.75rem,7vw,5.5rem)] leading-[0.86] tracking-tight">
               {selected.title}
             </h2>
@@ -134,7 +134,7 @@ export function YoursComposer({ initialStudy }: { initialStudy?: string }) {
         <div className="mx-auto max-w-[1180px]">
           <p className="mono text-[11px] tracking-[0.32em] uppercase text-gold">Commission</p>
           <h2 className="display mt-4 max-w-2xl text-[clamp(2.2rem,5vw,3.8rem)] leading-[0.92] tracking-tight">
-            What should guests see first?
+            What should people see first?
           </h2>
           <ul className="mt-12 grid gap-3">
             {crafts

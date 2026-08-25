@@ -87,7 +87,7 @@ export function WordmarkLab({
             I want this
           </Link>
           <p className="max-w-md text-[15px] text-muted">
-            Placed on your own address, as part of the house.
+            Placed on your own address, as part of your site.
           </p>
         </div>
       )}

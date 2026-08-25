@@ -33,7 +33,7 @@ export async function POST(request: Request) {
   }
 
   const need = isNeed(body.need) ? body.need : "site";
-  const needLabel = studioNeedOptions.find((item) => item.id === need)?.label ?? "A website for my house";
+  const needLabel = studioNeedOptions.find((item) => item.id === need)?.label ?? "A website for my business";
   const band = getBand(body.band);
   const atmosphere = getAtmosphere(body.study);
   const craft = getCraft(body.craft);
@@ -56,7 +56,7 @@ export async function POST(request: Request) {
     `Need: ${needLabel}`,
     `Opening: ${craft ? craft.name : "Not sure"}`,
     `Band: ${band ? `${band.price} — ${band.name}` : "Not sure yet"}`,
-    `Doorway: ${atmosphere ? `${atmosphere.title} (${atmosphere.job})` : "Not sure"}`,
+    `Style: ${atmosphere ? `${atmosphere.title} (${atmosphere.job})` : "Not sure"}`,
     `Brand word: ${word || "—"}`,
     "",
     body.note?.trim() || "(no note)",

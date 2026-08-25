@@ -128,7 +128,7 @@ export const pillars: readonly PillarPage[] = [
       },
       {
         title: "Prep the conversation",
-        body: "AI Call Prep loads openings and objections before the door opens.",
+        body: "AI Call Prep loads talking points and objections before the call starts.",
       },
       {
         title: "Advance or revive",
@@ -307,6 +307,6 @@ export const platformCapabilities = [
   },
   {
     title: "Modern delivery stack",
-    body: "Built to last, with room to grow as the sales house scales.",
+    body: "Built to last, with room to grow as the sales team scales.",
   },
 ] as const;

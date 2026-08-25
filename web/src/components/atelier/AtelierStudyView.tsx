@@ -41,7 +41,7 @@ export function AtelierStudyView({ study }: { study: AtelierStudy }) {
           <div className="atelier-hairline my-6" />
           <p className="text-sm leading-relaxed text-atelier-ivory/72">{study.statement}</p>
           <p className="mt-5 text-sm leading-relaxed text-atelier-champagne/80">
-            On a client site — this finish as the opening screen, or behind a booking form.
+            On a client site — this finish as the first page, or behind a booking form.
             The study is proof. The commission is the page.
           </p>
 

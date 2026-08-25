@@ -12,11 +12,11 @@ import {
 export const metadata: Metadata = {
   title: "The morning book",
   description:
-    "Imperium Adventures makes the desk a sales house opens first. See Find, Close, Grow, and Win in Finti.",
+    "Imperium Adventures makes the desk a sales team opens first. See Find, Close, Grow, and Win in Finti.",
   openGraph: {
     title: "The morning book · Imperium Adventures",
     description:
-      "The desk a sales house opens first. Find, Close, Grow, and Win — made by Imperium Adventures.",
+      "The desk a sales team opens first. Find, Close, Grow, and Win — made by Imperium Adventures.",
     type: "website",
   },
 };
